@@ -429,7 +429,12 @@ printScreen(screen, width);
 00000000000000000000000000000000
 00000000000000000000000000000000
 @@@@@@@
+
+6. Ünite soruları: Matematik ve Mantık sorular.
 6.1 The Heavy Pill: You have 20 bottles of pills. 19 bottles have 1.0 gram pills, but one has pills of weight 1.1 grams. Given a scale that provides an exact measurement, how would you find the heavy bottle? You can only use the scale once. pg 122
+20 adet ilaç şişesi var. 
+19 ilaç şişesi 1.0 gramlık ilaçlardan, 1 ilaç şişesi ise 1.1 gramlık ilaçlardan bulunduruyor.
+Tartıyı bir kez kullanmak şartı ile, hangi şişenin ağır olduğunu nasıl bulursun?
 
 6.2 Basketball: You have a basketball hoop and someone says that you can play one of two games. Game 1: You get one shot to make the hoop. Game 2: You get three shots and you have to make two of three shots. If p is the probability of making a particular shot, for which values of p should you pick one game or the other? pg 123 
 
