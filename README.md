@@ -452,8 +452,8 @@ Tartıyı bir kez kullanmak şartı ile, hangi şişenin ağır olduğunu nasıl
 
 6.9 100 Lockers: There are 100 closed lockers in a hallway. A man begins by opening all 100 lockers. Next, he closes every second locker. Then, on his third pass, he toggles every third locker (closes it if it is open or opens it if it is closed). This process continues for 100 passes, such that on each pass i, the man toggles every ith locker. After his 100th pass in the hallway, in which he toggles only locker #100, how many lockers are open? pg 124 
 6. 10 Poison: You have 1000 bottles of soda, and exactly one is poisoned. You have 10 test strips which can be used to detect poison. A single drop of poison will turn the test strip positive permanently. You can put any number of drops on a test strip at once and you can reuse a test strip as many times as you'd like (as long as the results are negative). However, you can only run tests once per day and it takes seven days to return a result. How would you figure out the poisoned bottle in as few days as possible? Follow up: Write code to simulate your approach. pg 124 
-
-@@@@@@@@
+ 
+ 7. Ünite: Object-Oriented Programming: Nesneye yönelik programlama.
 
 7.1 Deck of Cards: Design the data structures for a generic deck of cards. Explain how you would subclass the data structures to implement blackjack. pg127 
 
