@@ -480,12 +480,20 @@ Tartıyı bir kez kullanmak şartı ile, hangi şişenin ağır olduğunu nasıl
 7.12 Hash Table: Design and implement a hash table which uses chaining (linked lists) to handle collisions. pg 129 
 
 @@@@@@@@@@@@
+8. Ünite soruları: 
+Solutions to Recursion and Dynamic Programming
 
 8.1 Triple Step: A child is running up a staircase with n steps and can hop either 1 step, 2 steps, or 3 steps at a time. Implement a method to count how many possible ways the child can run up the stairs. pg134 
+8.1:Bir çocuk, "n" basamaklı bir merdivene çıkar. Tek seferde 1 basamak, 2 basamak veya 3 basamak atlayabilir. Bu çocuğun kaç farklı yolla merdiveni çıkabileceğini gösteren bir yöntem yazın. (Rekürsif mantıkla düşünmüş. Çocuğun son adımının kaçlı olacağını düşünmüş. )
 
 8.2 Robot in a Grid: Imagine a robot sitting on the upper left corner of grid with r rows and c columns. The robot can only move in two directions, right and down, but certain cells are "off limits" such that the robot cannot step on them. Design an algorithm to find a path for the robot from the top left to the bottom right. pg735 
 
-8.3 Magic Index: A magic index in an array A[ 1 .•. n-1] is defined to be an index such that A[ i] i. Given a sorted array of distinct integers, write a method to find a magic index, if one exists, in array A. FOLLOW UP What if the values are not distinct? pg 135 
+8.2:Bir "grid" sol üst köşesinde, "r" satırı ve "c" sütununda bir robot olduğunu varsayın. Bu robot sadece sağa ve aşağıya hareket edebilir. Ancak robot, bazı hücrelere basamaz. Buna göre sağ alt köşeye gidebilecek yolu gösteren bir yöntem yazın.
+-
+8.3 Magic Index: A magic index in an array A[ 1 ... n-1] is defined to be an index such that A[i]= i. Given a sorted array of distinct integers, write a method to find a magic index, if one exists, in array A. FOLLOW UP What if the values are not distinct? pg 135 
+
+8.3 Sihirli İndex: Bir Array var. Örnek: Dizi= 1, 4, 13,  3, 6, 7, 5, 11, 32, 9 
+Burada: 3 ve 9 sihirli indexe sahiptir. Çünkü Dizi[3]= 3, Dizi[9]= 9 
 
 8.4 Power Set: Write a method to return all subsets of a set. pg135
 
