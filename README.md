@@ -496,29 +496,49 @@ Solutions to Recursion and Dynamic Programming
 Burada: 3 ve 9 sihirli indexe sahiptir. Çünkü Dizi[3]= 3, Dizi[9]= 9 
 
 8.4 Power Set: Write a method to return all subsets of a set. pg135
-
+ 8.4:  Bir kümenin tüm alt kümelerini döndürmek için bir yöntem yazın. pg135
+ 
 8.5 Recursive Multiply: Write a recursive function to multiply two positive integers without using the * operator (or / operator). You can use addition, subtraction, and bit shifting, but you should minimize the number of those operations. pg 135 
 
-8.6 Towers of Hanoi: In the classic problem of the Towers of Hanoi, you have 3 towers and N disks of different sizes which can slide onto any tower. The puzzle starts with disks sorted in ascending order of size from top to bottom (i.e., each disk sits on top of an even larger one). You have the following constraints: (1) Only one disk can be moved at a time. (2) A disk is slid off the top of one tower onto another tower. (3) A disk cannot be placed on top of a smaller disk. Write a program to move the disks from the first tower to the last using Stacks. pg135
+8.5 "x" (Çarpı) işaretini kullanmadan iki pozitif tam sayıyı çarpmak için özyinelemeli bir fonksiyon yazın. Toplama, çıkarma ve bit kaydırma kullanabilirsiniz, ancak bu işlemlerin sayısını en aza indirmelisiniz.
 
-8.7 Permutations without Dups: Write a method to compute all permutations of a string of unique characters. pg 735 
+8.6 Towers of Hanoi: In the classic problem of the Towers of Hanoi, you have 3 towers and N disks of different sizes which can slide onto any tower. The puzzle starts with disks sorted in ascending order of size from top to bottom (i.e., each disk sits on top of an even larger one). You have the following constraints: (1) Only one disk can be moved at a time. (2) A disk is slid off the top of one tower onto another tower. (3) A disk cannot be placed on top of a smaller disk. Write a program to move the disks from the first tower to the last using Stacks. pg 135
+
+8.6  Klasik Hanoi Kulesi probleminde, 3 farklı kuleye ve herhangi bir kuleye kayabilecek, farklı boyutlarda N disklere sahipsiniz. Bulmaca, yukarıdan aşağıya doğru artan boyutta sıralanan disklerle başlar. Aşağıdaki kısıtlamalara sahipsiniz: (1) Bir seferde yalnızca bir disk taşınabilir. (2) Bir disk, bir kulenin tepesinden başka bir kulenin üzerine kaydırılır. (3) Bir disk, daha küçük bir diskin üzerine yerleştirilemez. Stacks kullanarak diskleri ilk kuleden sonuncuya taşımak için bir program yazın.
+
+8.7 Permutations without duplications: Write a method to compute all permutations of a string of unique characters. pg 735 
+ 8.7   Benzersiz bir karakterlerden oluşan dizinin tüm permütasyonlarını hesaplamak için bir yöntem yazın. 
 
 8.8 Permutations with Duplicates: Write a method to compute all permutations of a string whose characters are not necessarily unique. The list of permutations should not have duplicates. pg 735 
+8.8  Karakterleri, "mutlaka benzersiz" demeyeceğimiz, yani benzersiz olma şartı olmayan bir dizenin tüm permütasyonlarını hesaplamak için bir yöntem yazın. Permütasyonların listesinde iki kopya bulunmamalıdır. 
 
 8.9 Parens: Implement an algorithm to print all valid (i.e., properly opened and closed) combinations of n pairs of parentheses. EXAMPLE Input: 3 Output: (( () ) ) , ( () () ) , ( () ) () , () ( () ) , ()( ) () pg 136
 
+8.9 n sayıdaki parantez çiftinin tüm geçerli kombinasyonlarını yazdırmak için bir algoritma uygulayın. (Yani doğru şekilde açılıp kapatılmış olanların.) ÖRNEK Giriş: 3 Çıkış: ((())), (() ()), (()) (), () (()), () () () pg 136
+
 8.10 Paint Fill: Implement the"paint fill"function that one might see on many image editing programs. That is, given a screen (represented by a two-dimensional array of colors), a point, and a new color, fill in the surrounding area until the color changes from the original color. pg 136 
+8.10  Resim düzenlemek için kullanılan birçok programda görebileceğiniz "boya dolgusu" işlevini uygulayın. Yani ekrana yeni bir renkte nokta konduğunda, (iki boyutlu renk dizisi ile temsil edilir) renk orijinal rengini kaybedene kadar etrafını doldurun.
+8.11 Coins: Given an infinite number of quarters (25 cents), dimes (1O cents), nickels (5 cents), and pennies (1 cent), write code to calculate the number of ways of representing n cents. pg 136 
 
-8.11 Coins: Given an infinite number of quarters (25 cents), dimes (1 O cents), nickels (5 cents), and pennies (1 cent), write code to calculate the number of ways of representing n cents. pg 136 
-
+ 8.11  Sınırsız sayıda 25 kuruş, 10 kuruş, 5 kuruş ve 1 kuruş verildiğinde, n kuruşa  tamamlama yollarını yazın. 
+ 
 8.12 Eight Queens:Write an algorithm to print all ways of arranging eight queens on an 8x8 chess board so that none of them share the same row, column, or diagonal. In this case, "diagonal" means all diagonals, not just the two that bisect the board. pg 736 
 
+ 8.12  8x8 Satranç tahtasında, hiçbiri aynı sırayı, sütunu veya köşeyi paylaşmayacak şekilde sekiz kraliçeyi düzenlemenin tüm yollarını yazdırmak için bir algoritma yazın. (Sanırım kraliçe dediğinin ne olduğu önemli değil, herhangi bir taşı bu şekilde dizmek gerek. Mesela 1 rakamını sudokuda yerleştirmekle aynı mantık.)  Tahtanın yarısı değil, hepsi kullanılmalı. 
+ 
 8.13 Stack of Boxes: You have a stack of n boxes, with widths w1, heights hi, and depths di. The boxes cannot be rotated and can only be stacked on top of one another if each box in the stack is strictly larger than the box above it in width, height, and depth. Implement a method to compute the height of the tallest possible stack. The height of a stack is the sum of the heights of each box. pg 136
 
-8.14 Boolean Evaluation: Given a boolean expression consisting of the symbols 0 (false), 1 (true), & (AND), I (OR), and /\ (XOR), and a desired boolean result value result, implement a function to count the number of ways of parenthesizing the expression such that it evaluates to result. The expression should be fully parenthesized (e.g., ( 0) A( 1)) but not extraneously (e.g., ( ( ( 0)) /\ ( 1)) ). EXAMPLE countEval("l/\01011", false) -> 2 countEval("0&0&0&1All0", true)-> 10 
+8.13 Kutu stacki: "w1" genişliğine, "hi" yüksekliğine, "di" derinliğine sahip, n sayıda kutu yığınına sahipsiniz. Kutular döndürülemez ve yeni bir kutu koymak için, stackteki tüm kutuların, üstlerindeki her bir kutudan genişlik, yükseklik ve derinlik olarak kesinlikle büyük olması gerekir. Sadece bu şekilde üst üste istiflenebilir. (Sanırım piramit şeklinde dizilmesi gerektiğini söylüyor.) Mümkün olan en uzun stack yüksekliğini hesaplamak için bir yöntem uygulayın. Bir stack yüksekliği, her bir kutunun yüksekliğinin toplamıdır.
+ 
+8.14 Boolean Evaluation: Given a boolean expression consisting of the symbols 0 (false), 1 (true), & (AND), | (OR), and ^(XOR), and a desired boolean result value result, implement a function to count the number of ways of parenthesizing the expression such that it evaluates to result.
+
+
+8.14. Boolean değerlendirme (hesaplama): console.log(countEval('1^0|0|1', false)); // 2, correct
+console.log(countEval('0&0&0&1^1|0', true)); // 30, should be 10!?!?!
+
 
 @@@@@@@@@@@@@@@
-
+Solutions to System Design and Scalability
 9.1 Stock Data: Imagine you are building some sort of service that will be called by up to 1,000 client applications to get simple end-of-day stock price information (open, close, high, low). You may assume that you already have the data, and you can store it in any format you wish. How would you design the client-facing service that provides the information to client applications? You are responsible for the development, rollout, and ongoing monitoring and maintenance of the feed. Describe the different methods you considered and why you would recommend your approach. Your service can use any technologies you wish, and can distribute the information to the client applications in any mechanism you choose. pg 144 
 
 9.2 Social Network: How would you design the data structures for a very large social network like Facebook or Linkedln? Describe how you would design an algorithm to show the shortest path between two people (e.g., Me-> Bob-> Susan-> Jason-> You). pg 145 
