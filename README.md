@@ -541,21 +541,34 @@ console.log(countEval('0&0&0&1^1|0', true)); // 30, should be 10!?!?!
 Solutions to System Design and Scalability
 9.1 Stock Data: Imagine you are building some sort of service that will be called by up to 1,000 client applications to get simple end-of-day stock price information (open, close, high, low). You may assume that you already have the data, and you can store it in any format you wish. How would you design the client-facing service that provides the information to client applications? You are responsible for the development, rollout, and ongoing monitoring and maintenance of the feed. Describe the different methods you considered and why you would recommend your approach. Your service can use any technologies you wish, and can distribute the information to the client applications in any mechanism you choose. pg 144 
 
+9.1 Hisse Senedi Verileri: Gün sonu hisse senedi fiyat bilgilerini (açılış fiyatları, kapanış fiyatları, en yüksek fiyat, en düşük fiyat şeklinde) elde etmek için 1.000 kadar müşteri tarafından kullanılacak bir uygulama düşünün. Verilere zaten sahip olduğunuzu varsayabilir ve istediğiniz herhangi bir biçimde saklayabilirsiniz. Müşterilerin kullanacağı uygulamalara bilgi sağlayan hizmeti nasıl tasarlarsınız? Uygulamanın geliştirilmesinden, piyasaya sürülmesinden ve sürekli izlenmesinden ve bakımından siz sorumlusunuz. Düşündüğünüz farklı yöntemleri ve neden bu yaklaşımı önereceğinizi açıklayın. Servisiniz istediğiniz teknolojileri kullanabilir ve bilgileri diğer uygulamalarda müşterilere sunabilirsiniz. 
+
 9.2 Social Network: How would you design the data structures for a very large social network like Facebook or Linkedln? Describe how you would design an algorithm to show the shortest path between two people (e.g., Me-> Bob-> Susan-> Jason-> You). pg 145 
 
+ 9.2 Sosyal Ağ: Facebook veya Linkedln gibi çok büyük sosyal ağlar için gereken veri yapılarını nasıl tasarlarsınız? İki kişi arasındaki en kısa yolu gösterecek bir algoritmayı nasıl tasarlayacağınızı açıklayın. (Örneğin: Me-> Bob-> Susan-> Jason-> Siz) 
+
 9.3 Web Crawler: If you were designing a web crawler, how would you avoid getting into infinite loops? pg 745 
+9.3 Web Crawler: Bir web crawler tasarlıyorsanız, sonsuz döngülere girmekten nasıl kaçınırsınız?
 
 9.4 Duplicate URLs: You have 10 billion URLs. How do you detect the duplicate documents? In this case, assume "duplicate" means that the URLs are identical. pg 745 
 
-9.5 Cache: Imagine a web server for a simplified search engine. This system has 100 machines to respond to search queries, which may then call out using processSearch(string query) to another cluster of machines to actually get the result. The machine which responds to a given query is chosen at random, so you cannot guarantee that the same machine will always respond to th<> sam<> r<>quest. The method processSearch is very expensive. Design a caching mechanism to cache the results of the most recent queries. Be sure to explain how you would update the cache when data changes. pg 745 
-
+9.5 Cache: Imagine a web server for a simplified search engine. This system has 100 machines to respond to search queries, which may then call out using processSearch(string query) to another cluster of machines to actually get the result. The machine which responds to a given query is chosen at random, so you cannot guarantee that the same machine will always respond to the same request. The method processSearch is very expensive. Design a caching mechanism to cache the results of the most recent queries. Be sure to explain how you would update the cache when data changes. pg 745 
+9.5 Önbellek: Basitleştirilmiş bir arama motoru için bir web sunucusu hayal edin. Bu sistem, arama sorgularına cevap vermek için 100 makineye sahiptir, bu da sonucu elde etmek için processSearch (string query) komutunu başka bir makine kümesine kullanarak çağırabilir. Belirli bir sorguyu yanıtlayan makine rastgele seçilir, bu nedenle aynı makinenin her zaman aynı göreve cevap vereceğini garanti edemezsiniz. ProcessSearch yöntemi çok pahalıdır. En son sorguların sonuçlarını önbelleğe almak için bir önbellek mekanizması tasarlayın. Veri değiştiğinde önbelleği nasıl güncelleyeceğinizi açıkladığınızdan emin olun. 
 9.6 Sales Rank: A large eCommerce company wishes to list the best-selling products, overall and by category. For example, one product might be the #1056th best-selling product overall but the #13th best-selling product under "Sports Equipment" and the #24th best-selling product under "Safety:· Describe how you would design this system. pg 745 
+
+9.6 Satış Sıralaması: Büyük bir e-ticaret şirketi, tüm ürünlere  ve kategoriye göre en çok satan ürünleri listelemek istiyor. Örneğin, bir ürün genel olarak # 1056. sıradaki en çok satan ürün olabilir ama "Spor Malzemeleri" kategorisinde en çok satan 10. ürün olabilir.  "Güvenlik" :kategorisindeki 24. en çok satan ürün olabilir.
+Bu sistemi nasıl tasarlayacağınızı açıklayın. 
 
 9.7 Personal Financial Manager: Explain how you would design a personal financial manager (like Mint.com). This system would connect to your bank accounts, analyze your spending habits, and make recommendations. 
 
-9.8 Pastebin: Design a system like Pastebin, where a user can enter a piece of text and get a randomly generated URL for public access. pg745 
+9.7 Kişisel Finans Yöneticisi: Mint.com gibi bir kişisel finans yöneticisini nasıl tasarlayacağınızı açıklayın. Bu sistem banka hesaplarınıza bağlanır, harcama alışkanlıklarınızı analiz eder ve önerilerde bulunur. 
 
+9.8 Pastebin: Design a system like Pastebin, where a user can enter a piece of text and get a randomly generated URL for public access. pg745 
+9.8 Pastebin: Bir kullanıcının bir metin girebileceği ve rastgele oluşturulmuş bir URL alabileceği Pastebin gibi bir sistem tasarlayın. 
 @@@@@@@@@@
+
+10. Ünite:
+Solutions to Sorting and Searching
 
 10.1 Sorted Merge: You are given two sorted arrays, A and B, where A has a large enough buffer at the end to hold B. Write a method to merge B into A in sorted order. pg149 
 
@@ -595,6 +608,7 @@ EXAMPLE
 Output: {5, 1, 3, 2, 3} 
 
 @@@@@@@@@@
+11. Ünite: Test
 
 11.1 Mistake: Find the mistake(s) in the following code:
 unsigned int i; 
@@ -620,7 +634,7 @@ pg157
 11.6 Test an ATM: How would you test an ATM in a distributed banking system? 
 
 @@@@@@@
-
+12. Ünite: C and C++
 12.1 Last K Lines: Write a method to print the last Klines of an input file using C ++. pg163
 
 12.2 Reverse String: Implement a function void reversetchar* str) in C or C++ which reverses a nullterminated string. 
@@ -658,7 +672,7 @@ Minimize the number of calls to malloc and make sure that the memory is accessib
 notation arr [ i] [ j]. 
 
 @@@@@@@@@
-
+13 Ünite: Java
 13.1 Private Constructor: In terms of inheritance, what is the effect of keeping a constructor private? 
 
 
@@ -684,7 +698,7 @@ getRandomSubset ( List< Integer> list) that returns a random subset of arbitrary
 subsets (including the empty set) should be equally likely to be chosen. 
 
 @@@@@@@@@@@@
-
+14. Ünite: Database
 14.1 Multiple Apartments: Write a SQL query to get a list of tenants who are renting more than one
 apartment. 
 
@@ -707,6 +721,7 @@ Design what this database might look like and provide a SQL query to return a li
 students (top 10%), sorted by their grade point average. 
 
 @@@@@@@@@
+15: Threadler ve Locklar
 
 15.1 Thread vs. Process: What's the difference between a thread and a process? 
 
@@ -744,7 +759,7 @@ of 3 and prints"Fizz''. Another thread is responsible for divisibility of 5 and 
 is responsible for divisibility of 3 and 5 and prints "FizzBuzz''. A fourth thread does the numbers. ,
 
 @@@@@@@@@@@
-
+16: Ek-Sorular: Orta Derece
 16.1 Number Swapper: Write a function to swap a number in place (that is, without temporary variables). 
 
 16.2 Word Frequencies: Design a method to find the frequency of occurrences of any given word in a
@@ -892,7 +907,7 @@ Input: 2*3+5/6*3+15
 Output: 23.5 
 
 @@@@@@@@@@@@@@@@@
-
+16: Ek-Sorular: Zor  
 17 .1 Add Without Plus: Write a function that adds two numbers. You should not use+ or any arithmetic
 operators. 
 
