@@ -571,12 +571,22 @@ Bu sistemi nasıl tasarlayacağınızı açıklayın. 
 Solutions to Sorting and Searching
 
 10.1 Sorted Merge: You are given two sorted arrays, A and B, where A has a large enough buffer at the end to hold B. Write a method to merge B into A in sorted order. pg149 
+ 10.1 Sıralanmış Birleştirme: A ve B olmak üzere iki sıralı dizi verilir; sıralı olarak  B'yi A'ya birleştirmek için bir yöntem yazın. (Birleştirince sıraları değişiyor.)
 
-10.2 Group Anagrams: Write a method to sort an array ot strings so that all tne anagrnms are next to each other. pg 150 
+10.2 Group Anagrams: Write a method to sort an array of strings so that all the anagrams are next to each other. pg 150 
+10.2 Grup Anagramları: Bir String dizisini sıralamak için öyle bir yöntem yazın ki tüm anagramlar yan yana olsun.
+ Örnek: {"one", "neo", "kitap", "patik", "para", "arap"}
 
-10.3 Search in Rotated Array: Given a sorted array of n integers that has been rotated an unknown number of times, write code to find an element in the array. You may assume that the array was originally sorted in increasing order. EXAMPLE lnput:find5in{15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14} Output: 8 (the index of 5 in the array) pg 150
+10.3 Search in Rotated Array: Given a sorted array of n integers that has been rotated an unknown number of times, write code to find an element in the array. You may assume that the array was originally sorted in increasing order. 
+EXAMPLE 
+input:find 5 in {15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14} Output: 8 (the index of 5 in the array) pg 150
+
+10.3 Döndürülmüş Dizi İçinde Ara: Bilinmeyen sayıda döndürülmüş sıralanmış bir n tam sayı dizisi verildiğinde, dizideki bir öğeyi bulmak için kod yazın. Dizinin başlangıçta artan düzende sıralandığını varsayabilirsiniz.   ÖRNEK : Dizideki 5'in indeksi Giriş: find 5 in {15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14}  Çıktı: 8 
+ Not: Binary search yapılacak, ama dizi "rotated" yani, ortasından sayısız kez döndürülmüş.
 
 10.4 Sorted Search, No Size: You are given an array-like data structure Listy which lacks a size method. It does, however, have an elementAt ( i) method that returns the element at index i in 0( 1) time. If i is beyond the bounds of the data structure, it returns -1. (For this reason, the data structure only supports positive integers.) Given a Listy which contains sorted, positive integers, find the index at which an element x occurs. If x occurs multiple times, you may return any index. pg 150 
+10.4 Sıralı Arama, size() Yok:  belli size() methodu olmayan, Listy adında, dizi-benzeri bir veri yapısı verilir.  Bununla birlikte, 0 indexindeki öğeyi O(1) zamanında döndüren bir elementAt(i) yöntemine sahiptir. Eğer veri yapısının sınırları dışındaysa, -1 döndürür. (Bu nedenle, veri yapısı sadece pozitif tamsayıları destekler.) Sıralı, pozitif tamsayılar içeren bir liste göz önüne alındığında, x öğesinin olduğu dizini bulun. X birden çok kez bulunursa, herhangi bir index döndürebilirsiniz. 
+Not: elementAt(index) methodunu kullanarak, bunun tam tersini yapan yani herhangi elemanın indexini döndüren method yazmak.
 
 10.5 Sparse Search: Given a sorted array of strings that is interspersed with empty strings, write a method to find the location of a given string.
 
@@ -586,13 +596,22 @@ Input: ball, {"at", "", "", "", "ball", "", "",  "car", "", "",  "dad", "", "" }
 
 Output: 4  
 
+10.5 Seyrek Arama: Boşluklu bir dizi verildiğinde, verilen String yerini bulmak için bir yöntem yazın. 
+
 10.6 Sort Big File: Imagine you have a 20 GB file with one string per line. Explain how you would sort the file. pg 150 
+10.6 Büyük Dosyayı Sırala: Her bir satırında bir String (metin) olan 20 GB'lık bir dosya hayal edin. Dosyayı nasıl sıralayacağınızı açıklayın.
 
 10.7 Missing Int: Given an input file with four billion non-negative integers, provide an algorithm to generate an integer that is not contained in the file. Assume you have 1 GB of memory available for this task. FOLLOW UP What if you have only 1O  MB of memory? Assume that all the values are distinct and we now have no more than one billion non-negative integers. pg750 
 
+10.7 Kayıp tamsayı: Negatif olmayan dört milyar adet tamsayı içeren bir girdi dosyası verildiğinde, dosyada bulunmayan bir tamsayı üretmek için bir algoritma yazın (-sağlayın). Bu görev için 1 GB belleğinizin olduğunu varsayalım.  Takip Et: (Ek olarak soruyor sanırım.) Sadece 10 MB belleğiniz olsaydı ne yapardınız?  Tüm değerlerin farklı olduğunu ve şimdi bir milyardan fazla negatif olmayan tamsayıya sahip olmadığımızı varsayalım. 
+
+
 10.8 Find Duplicates: You have an array with all the numbers from 1 to N, where N is at most 32,000. The array may have duplicate entries and you do not know what N is. With only 4 kilobytes of memory available, how would you print all duplicate elements in the array? pg 151 
 
+10.8 Tekrarlanan Öğeleri Bul: N'nin değeri en büyük 32.000 olabilecek şekilde, 1'den N'ye kadar olan tüm sayıları içeren bir diziniz var. Dizinin yinelenen girişleri olabilir ve N'nin ne olduğunu bilmiyorsunuz. Yalnızca 4 kilobayt bellek alanınız varsa, dizideki tüm yinelenen öğeleri nasıl yazdırırsınız?
+
 10.9 Sorted Matrix Search: Given an M x N matrix in which each row and each column is sorted in ascending order, write a method to find an element. pg 151 
+10.9 Sıralı Matris Arama: Her satırın ve her sütunun artan bir şekilde sıralandığı, düzenli bir M x N matrisinin içindeki herhangi bir elemanı bulmak için bir yöntem yazın. 
 
 10.10 Rank from Stream: Imagine you are reading in a stream of integers. Periodically, you wish to be able to look up the rank of a number x (the number of values less than or equal to x). Implement the data structures and algorithms to support these operations. That is, implement the method track(int x), which is called when each number is generated, and the method getRankOfNumber(int x), which returns the number of values less than or equal to x (not including x itself).  pg151
 EXAMPLE 
@@ -601,12 +620,21 @@ getRankOfNumber(1) = 0
 getRankOfNumber(3) = 1 
 getRankOfNumber(4) = 3  
 
+(Not: Bir Stream x elemanından küçük veya ona eşit (kendisi hariç) kaç eleman olduğunu gösteren method yazınız)
 
-10.11 Peaks and Valleys: In an array of integers, a "peak" is an element which is greater than or equal to the adjacent integers and a "valley" is an element which is less than or equal to the adjacent integers. For example, in the array {5, 8, 6, 2, 3, 4, 6}, {8, 6} are peaks and {5, 2} are valleys. Given an array of integers, sort the array into an alternating sequence of peaks and valleys. pg 151 
+10.10 Stream'den derece (rank) bulmak: Bir tam sayı akışını (Burada "in" var, o yüzden "akışında" olabilir ama mantıklı gelmedi.) okuduğunuzu hayal edin. Periyodik olarak, x sayısının sırasına bakmak istiyorsunuz. (x'den küçük veya ona eşit olan değerlerin sayısı.)  (Bundan sonrasını pek anlayamadım.) Bu işlemleri desteklemek için veri yapılarını ve algoritmaları uygulayın. Diğer bir deyişle, her sayı üretildiğinde çağrılan yöntem izini (int x) ve x'e eşit veya daha küçük (x değerini içermeyen) değerlerini döndüren getRankOfNumber (int x) yöntemini uygulayın.  Örnek:   Stream(inorderofappearance):5, 1, 4, 4, 5, 9, 7, 13, 3 
+getRankOfNumber(1) = 0 
+getRankOfNumber(3) = 1 
+getRankOfNumber(4) = 3  
+
+10.11 Peaks and Valleys: In an array of integers, a "peak" is an element which is greater than or equal to the adjacent integers and a "valley" is an element which is less than or equal to the adjacent integers. For example, in the array
+{5, 8, 6, 2, 3, 4, 6}, {8, 6} are peaks and {5, 2} are valleys. Given an array of integers, sort the array into an alternating sequence of peaks and valleys. pg 151 
 EXAMPLE
  Input: {5, 3, 1, 2, 3} 
 Output: {5, 1, 3, 2, 3} 
 
+  10.11 Tepeler ve Vadiler: Bir tamsayı dizisinde,   Tepe: Bitişik tamsayılara eşit veya ondan daha büyük bir elementtir. Vadi: Bitişik tamsayılara eşit veya ondan daha küçük bir elementtir.  Örneğin, {5, 8, 6, 2, 3, 4, 6} dizisinde,  {8, 6} tepe noktaları   {5, 2} vadiler Bir tamsayı dizisi verildiğinde, bu diziyi değişen bir tepe ve vadiler dizisine göre sıralayın.  
+ (Bir tepe, bir vadi, bir tepe, bir vadi olacak şekilde sıralama)
 @@@@@@@@@@
 11. Ünite: Test
 
