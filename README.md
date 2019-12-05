@@ -643,50 +643,77 @@ unsigned int i;
 for (i = 100; i >= 0; --i)
 printf("%d\n", i); 
 
+11.1  Hata: Takip eden kodların içinde hataları bulun :
+unsigned int i; 
+for (i = 100; i >= 0; --i)
+printf("%d\n", i); 
 
 11.2 Random Crashes: You are given the source to an application which crashes when it is run. After
 running it ten times in a debugger, you find it never crashes in the same place. The application is
 single threaded, and uses only the C standard library. What programming errors could be causing
 this crash? How would you test each one? pg 157
-
+11.2 Rastgele Çökmeler: Bir uygulama çalıştırıldığın çöküyor. On kez debug yaptığınızda, aynı yerde asla çökmediğini fark ediyorsunuz. Uygulama yalnızca standart C kütüphanesini kullanıyor. Bu çökmeler hangi programlama hatalarından kaynaklanabilir?
+ Her birini nasıl test edersiniz? 
 
 11.3 Chess Test: We have the following method used in a chess game: boolean canMoveTo(int x,
 int y). This method is part of the Piece class and returns whether or not the piece can move to
 position (x, y). Explain how you would test this method.
 pg157 
 
-11.4 No Test Tools: How would you load test a webpage without using any test tools? 
+11.3 Satranç Testi: Bir satranç oyununda kullanılan aşağıdaki gibi bir yöntemimiz var: 
+boolean canMoveTo (int x, int y).   Bu yöntem, Piece sınıfının bir parçasıdır ve position(x, y) ile parçanın hareket edip edemeyeceğini  döndürür. Bu yöntemi nasıl test edeceğinizi açıklayın.
+
+11.4 No Test Tools: How would you "load test" a webpage without using any test tools? 
+
+11.4 Test Aracı Yok: Bir web sayfası için "yükleme testini" test aracı olmadan nasıl yaparsınız?
 
 11.5 Test a Pen: How would you test a pen? 
 
+11.5 Kalemi Test Et: Kalemi nasıl test edersiniz?
+
 11.6 Test an ATM: How would you test an ATM in a distributed banking system? 
 
-@@@@@@@
+11.6 ATM'yi Test Etme: Dağıtık bankacılık sistemindeki bir ATM'yi nasıl test edersiniz? 
+ 
 12. Ünite: C and C++
 12.1 Last K Lines: Write a method to print the last Klines of an input file using C ++. pg163
+12.1 Son K Satırı: C ++ kullanarak bir girdi dosyasının son K (tane) satırını yazdırmak için bir yöntem yazın.  
 
-12.2 Reverse String: Implement a function void reversetchar* str) in C or C++ which reverses a nullterminated string. 
+12.2 Reverse String: Implement a function void reverse(char* str) in C or C++ which reverses a nullterminated string. 
+
+12.2  String'i tersine çevirme: C veya C ++ 'da  null-terminated stringi tersine çeviren "reverse(char * str)" void işlevini uygular. 
 
 12.3 Hash Table vs STL Map: Compare and contrast a hash table and an STL map. How is a hash table implemented? If the number of inputs is small, which data structure options can be used instead of a hash table? 
-
+12.3 Hash Table vs STL Map: Hash Table vs STL Map haritasını karşılaştırın. Bir Hash Table nasıl uygulanır? 
+Girdi sayısı az ise,  Hash Table yerine hangi veri yapısı seçenekleri kullanılabilir? 
 
 12.4 Virtual Functions: How do virtual functions work in C++? 
+12.4 Sanal İşlevler: Sanal işlevler C ++ 'da nasıl çalışır?
 
 12.5 Shallow vs Deep Copy: What is the difference between deep copy and shallow copy? Explain how
 you would use each. 
+12.5  Sığ ve Derin Kopyalama: Derin kopya ile sığ kopya arasındaki fark nedir? Her birini nasıl kullacağını açıkla.
 
 12.6 Volatile: What is the significance of the keyword "volatile" in C? 
+12.6  Uçucu(Volatile): C'deki "uçucu" ("Volatile") anahtar kelimenin anlamı nedir?
 
 12.7 Virtual Base Class: Why does a destructor in base class need to be declared virtual? 
+
+12.7  Sanal Temel Sınıf: Temel sınıftaki bir 'destructor-yıkıcı' methodun sanal olarak tanımlanmasının sebebi nedir?
 
 12.8 Copy Node: Write a method that takes a pointer to a Node structure as a parameter and returns a
 complete copy of the passed in data structure. The Node data structure contains two pointers to
 other Nodes. 
 
+12.8 Node'u kopyala: Bir Node için pointer'ı parametre olarak alan ve bunu kopyalayan bir method yazın.
+Bu Node veriyapısı, diğer Node'lara dair iki pointer içermektedir.
+
 12.9 Smart Pointer: Write a smart pointer class. A smart pointer is a data type, usually implemented
 with templates, that simulates a pointer while also providing automatic garbage collection. It
 automatically counts the number of references to a SmartPointer<T*> object and frees the
 object of type T when the reference count hits zero. 
+
+12.9  Akıllı İşaretçi: Bir akıllı işaretçi sınıfı yazın. Akıllı işaretçi, otomatik çöp toplama sağlarken aynı zamanda bir işaretçiyi simüle eden şablonlarla uygulanabilen bir veri türüdür.    Bir SmartPointer <T *> nesnesine yapılan referansları otomatik olarak sayar ve referans sayısı sıfıra ulaştığında T tipi nesneyi serbest bırakır.  
 
 12.10 Malloc: Write an aligned malloc and free function that supports allocating memory such that the
 memory address returned is divisible by a specific power of two.
@@ -694,37 +721,56 @@ EXAMPLE
 align_malloc (1000, 128) will return a memory address that is a multiple of 128 and that points
 to memory of size 1000 bytes.
 aligned_free() will free memory allocated by align_malloc. 
+12.10  Malloc: (Bu soruyu da anlamadım. Anca bu kadar oldu.) Öyle bir hizalanmış malloc yazın ki, hafıza tahsis edilmesini desteklesin. Dönen hafıza adresi, ikisinin belirli bir gücü ile bölünebilir.
+ÖRNEK
+align_malloc (1000, 128), 128 olan ve bu noktaların katı olan bir hafıza adresini döndürür.
+1000 bayt boyutunda
+align_free () align_malloc tarafından ayrılan belleği boşaltır.
+
 
 12.11 20 Alloc: Write a function in C called my2DA1loc which allocates a two-dimensional array.
 Minimize the number of calls to malloc and make sure that the memory is accessible by the
 notation arr [ i] [ j]. 
 
+12.11  20 Alloc: C'ye iki boyutlu bir array tahsis eden my2DA1loc adlı bir fonksiyon yazın. Malloc'a yapılan çağrı sayısını en aza indirin ve hafızaya [i] [j] notasyonu ile erişilebildiğinden emin olun.  
 @@@@@@@@@
+
 13 Ünite: Java
 13.1 Private Constructor: In terms of inheritance, what is the effect of keeping a constructor private? 
-
+13.1 Private Constructor: Kalıtım yönünden bakıldığında, bir constructor methodu private yapmanın etkisi nedir?
 
 13.2 Return from Finally: In Java, does the finally block get executed if we insert a return statement
 inside the try block of a try-catch-finally? 
+13.2 Return from Finally: Java'da, bir try-catch-finally içinde, try bloğu içine return yazılırsa kod çalışır mı?
 
-13.3 Final, etc.: What is the difference between final, finally, and finalize? 
+13.3 Final, etc.: What is the difference between final, finally, and "deneme try"? 
+
+https://www.geeksforgeeks.org/g-fact-24-finalfinally-and-finalize-in-java/
 
 13.4 Generics vs. Templates: Explain the difference between templates in C ++ and generics in Java. 
+13.4: JAvadaki generics ile C'deki Templates farkı.
 
 13.5 TreeMap, HashMap, LinkedHashMap: Explain the differences between TreeMap, HashMap, and
 LinkedHashMap. Provide an example of when each one would be best. 
+3.5 TreeMap, HashMap, LinkedHashMap: bu veri yapıları arasındaki fark.
 
 13.6 Object Reflection: Explain what object reflection is in Java and why it is useful. 
+13.7 Object Reflection: Reflection ile ne yapıldığını açıklayın.
 
 13.7 Lambda Expressions: There is a class Country that has methods getContinent() and
 getPopulation(). Write a function int getPopulation(List<Country> countries,
 String continent) that computes the total population of a given continent, given a list of all
 countries and the name of a continent. 
-
+13.7:  Lambda Expressions: Country diye bir sınıf var. getContinent() ve getPopulation() diye iki methodu var. 
+ getPopulation(List<Country> countries,
+String continent) tüm ülkelerin ve kıtanın ismi verildiğinde, toplam nüfusu veren bir method yazın.
+ 
 13.8 Lambda Random: Using Lambda expressions, write a function List<Integer>
 getRandomSubset ( List< Integer> list) that returns a random subset of arbitrary size. All
 subsets (including the empty set) should be equally likely to be chosen. 
-
+13.8: Bu listeyi parametre olarak alan bir getRandomSubset ( List< Integer> list) methodu yazın.
+ listenin alt kümelerinden herhangi birisini rastgele olarak döndürsün.
+ 
 @@@@@@@@@@@@
 14. Ünite: Database
 14.1 Multiple Apartments: Write a SQL query to get a list of tenants who are renting more than one
