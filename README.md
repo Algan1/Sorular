@@ -752,15 +752,18 @@ https://www.geeksforgeeks.org/g-fact-24-finalfinally-and-finalize-in-java/
 
 13.5 TreeMap, HashMap, LinkedHashMap: Explain the differences between TreeMap, HashMap, and
 LinkedHashMap. Provide an example of when each one would be best. 
-3.5 TreeMap, HashMap, LinkedHashMap: bu veri yapıları arasındaki fark.
+
+13.5 TreeMap, HashMap, LinkedHashMap: bu veri yapıları arasındaki fark.
 
 13.6 Object Reflection: Explain what object reflection is in Java and why it is useful. 
-13.7 Object Reflection: Reflection ile ne yapıldığını açıklayın.
+
+13.6 Object Reflection: Reflection ile ne yapıldığını açıklayın.
 
 13.7 Lambda Expressions: There is a class Country that has methods getContinent() and
 getPopulation(). Write a function int getPopulation(List<Country> countries,
 String continent) that computes the total population of a given continent, given a list of all
 countries and the name of a continent. 
+
 13.7:  Lambda Expressions: Country diye bir sınıf var. getContinent() ve getPopulation() diye iki methodu var. 
  getPopulation(List<Country> countries,
 String continent) tüm ülkelerin ve kıtanın ismi verildiğinde, toplam nüfusu veren bir method yazın.
@@ -768,8 +771,9 @@ String continent) tüm ülkelerin ve kıtanın ismi verildiğinde, toplam nüfus
 13.8 Lambda Random: Using Lambda expressions, write a function List<Integer>
 getRandomSubset ( List< Integer> list) that returns a random subset of arbitrary size. All
 subsets (including the empty set) should be equally likely to be chosen. 
+
 13.8: Bu listeyi parametre olarak alan bir getRandomSubset ( List< Integer> list) methodu yazın.
- listenin alt kümelerinden herhangi birisini rastgele olarak döndürsün.
+Listenin alt kümelerinden herhangi birisini rastgele olarak döndürsün.
  
 @@@@@@@@@@@@
 14. Ünite: Database
