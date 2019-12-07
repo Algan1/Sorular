@@ -824,18 +824,21 @@ students (top 10%), sorted by their grade point average.
 15: Threadler ve Locklar
 
 15.1 Thread vs. Process: What's the difference between a thread and a process? 
-15.1  İş parçacığına karşı işlem(Süreç):  İş parçacığı ile bir işlem arasındaki fark nedir?
+15.1  Thread (İş parçacığına) karşı işlem(Süreç):  Thread (İş parçacığı) ile bir Process arasındaki fark nedir?
 
 15.2 Context Switch: How would you measure the time spent in a context switch? 
-  15.2 Context Switch (Şalter Bağlantısı):  Context Switch'te harcanan zamanı nasıl ölçersiniz?
+15.2 Context Switch (Şalter Bağlantısı): Context Switch'te harcanan zamanı nasıl ölçersiniz?
+
 15.3 Dining Philosophers: In the famous dining philosophers problem, a bunch of philosophers are
 sitting around a circular table with one chopstick between each of them. A philosopher needs both
 chopsticks to eat, and always picks up the left chopstick before the right one. A deadlock could
-potentially occur if all the philosophers reached for the left chopstick atthe same time. Using threads
+potentially occur if all the philosophers reached for the left chopstick at the same time. Using threads
 and locks, implement a simulation of the dining philosophers problem that prevents deadlocks. 
-  15.3 Yemek Filozofları:  Ünlü yemek filozofları probleminde, bir grup filozof dairesel bir masanın etrafında oturuyor ve her filozof arasında bir yemek çubuğu bulunuyor.  Bir filozofun yemek yiyebilmesi için iki çubuğa ihtiyacı var ve her zaman sağdaki çubuktan önce soldaki çubuğu alır. Tüm filozoflar aynı anda önce soldaki çubuğu alırsa kilitlenme yaşanır.  (Çünkü iki çubuğa ihtiyaçları vardır ama hepsi soldakini alırsa, sağlarında çubuk kalmaz ve hiçbiri yemek yiyemez.) İşlem parçacığı kullanarak, bu problemin kilitlenmesini önleyen bir simülasyon uygulayın. 
+
+15.3 Yemek Filozofları:  Ünlü yemek filozofları probleminde, bir grup filozof dairesel bir masanın etrafında oturuyor ve her filozof arasında bir yemek çubuğu bulunuyor.  Bir filozofun yemek yiyebilmesi için iki çubuğa ihtiyacı var ve her zaman sağdaki çubuktan önce soldaki çubuğu alır. Tüm filozoflar aynı anda önce soldaki çubuğu alırsa kilitlenme yaşanır.  (Çünkü iki çubuğa ihtiyaçları vardır ama hepsi soldakini alırsa, sağlarında çubuk kalmaz ve hiçbiri yemek yiyemez.) İşlem parçacığı kullanarak, bu problemin kilitlenmesini önleyen bir simülasyon uygulayın. 
+
 15.4 Deadlock-Free Class: Design a class which provides a lock only if there are no possible deadlocks. 
- 15.4 Deadlock-Free Sınıfı: Kilitlenme olmadığında, kilitlenmeyi sağlayan bir sınıf tasarlayın.
+ 15.4 Deadlock-Free Sınıfı: Sâdece deadlocks olmadığında,  kilitlenmeyi (lock) sağlayan bir sınıf tasarlayın.
 15.5 Call In Order: Suppose we have the following code:
 public class Foo {
 public Foo() { ... }
@@ -843,21 +846,32 @@ public void first() { ... }
 public void second() { ... }
 public void third() { ... }
 }
-The same instance of Foo will be passed to three different threads. ThreadA will call first threadB
-will call second, and thread( will call third. Design a mechanism to ensure that first is called
+The same instance of Foo will be passed to three different threads. 
+ThreadA will call first(),
+threadB will call second(),
+and threadC will call third(). 
+
+Design a mechanism to ensure that first is called
 before second and second is called before third. 
-  15.5 Sırayla Ara:  Aşağıdaki gibi bir kodumuz olduğunu varsayalım:  public class Foo {
+
+  15.5 Sırayla Çağır:  Aşağıdaki gibi bir kodumuz olduğunu varsayalım:  public class Foo {
 public Foo() { ... }
 public void first() { ... }
 public void second() { ... }
 public void third() { ... }
 }
-Aynı 'Foo' üç farklı iş parçacığına iletilecek. ThreadA ilk ThreadB'yi arayacak sonra
-ikinciyi arayacak ve son olarak üçüncüyü arayacak.  Arama sırasını tersine alacak bir mekanizma tasarlayın.
+Aynı 'Foo' üç farklı iş parçacığına iletilecek. ThreadA first() fonksyionunu,  ThreadB second() fonksiyonunu çağıracak sonra
+ve ThreadC  third() fonksiyonunu çağıracak.
+ Arama sırasını böyle garantiye alacak bir mekanizma tasarlayın.
+ 
 15.6 Synchronized Methods: You are given a class with synchronized method A and a normal
-method B. If you have two threads in one instance of a program, can they both execute A at the
-same time? Can they execute A and B at the same time?
-  15.6  Senkronize Metotlar:  Senkronize metot A sınıfınız ve normal metot B sınıfınız var.  Eğer programın iki iş parçacıklı bir örneği varsa, ikisini de A sınıfı ile yapabilir misiniz? Veya A ve B sınıfını aynı anda kullanabilir misiniz? 
+method B.
+If you have two threads in one instance of a program, can they both execute A at the
+same time? 
+Can they execute A and B at the same time?
+
+15.6 Senkronize Metotlar:  Senkronize metot A sınıfınız ve normal metot B sınıfınız var.  Eğer programın iki iş parçacıklı bir örneği varsa, ikisini de A sınıfı ile yapabilir misiniz? Veya A ve B sınıfını aynı anda kullanabilir misiniz? 
+(Not: Senkronize method nedir?)
 
 15.7 FizzBuzz: In the classic problem FizzBuzz, you are told to print the numbers from 1 to n. However,
 when the number is divisible by 3, print "Fizz''. When it is divisible by 5, print "Buzz''. When it is
