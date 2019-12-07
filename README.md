@@ -775,44 +775,67 @@ subsets (including the empty set) should be equally likely to be chosen.
 13.8: Bu listeyi parametre olarak alan bir getRandomSubset ( List< Integer> list) methodu yazın.
 Listenin alt kümelerinden herhangi birisini rastgele olarak döndürsün.
  
-@@@@@@@@@@@@
+
 14. Ünite: Database
 14.1 Multiple Apartments: Write a SQL query to get a list of tenants who are renting more than one
 apartment. 
+14.1 Birden çok ev: Birden fazla evi kiralayan kiracıların listesisni getirmek için bir SQL sorgusu yazın.
 
 14.2 Open Requests: Write a SQL query to get a list of all buildings and the number of open requests
-(Requests in which status equals'Open'). 
+(Requests in which status equals 'Open'). 
+SELECT r.*, b.buildingName FROM ctci.Requests as r 
+		   JOIN ctci.Apartments as a ON r.apartmentID= a.apartmentID
+		   JOIN ctci.Buildings as b ON a.buildingID= b.buildingID
+           where r.status="Open";
+                            
+14.2 Açık Talepler:  Tüm binaların bir listesini ve açık taleplerin numarasını almak için bir SQL sorgusu yazın
+('Açık' anlamına gelen talepler.)
 
 14.3 Close All Requests: Building #11 is undergoing a major renovation. Implement a query to close all
 requests from apartments in this building. 
+UPDATE ctci.Requests r
+JOIN ctci.Apartments as a ON r.apartmentID= a.apartmentID
+		   JOIN ctci.Buildings as b ON a.buildingID= b.buildingID
+           SET r.status ="Close"
+		   where r.status="Open"
+                            
+	    	
+14.3 Tüm Talepleri Kapatın:  11. bina, büyük bir tadilattan geçiyor. Bu binadaki dairelerin taleplerinin hepsini kapatmak için bir sorgu uygulayın.
 
 14.4 Joins: What are the different types of joins? Please explain how they differ and why certain types
 are better in certain situations. 
+(https://www.w3schools.com/sql/sql_join.asp) 
+14.4 (Joins):  Farklı Joins tipleri nelerdir? Lütfen nasıl farklı olduklarını ve belirli tiplerin bazı durumlarda neden daha iyi olduğunu açıklayın.
 
 14.5 Denormalization: What is denormalization? Explain the pros and cons. 
+14.5 Denormalizasyon: Denormalizasyon nedir? Artılarını ve eksilerini açıklar.
 
 14.6 Entity-Relationship Diagram: Draw an entity-relationship diagram for a database with companies,
 people, and professionals (people who work for companies). 
+14.6 Şirketler, insânlar ve uzmanlar arasında ilişki diagramlarını oluşturun.
+
 
 14.7 Design Grade Database: Imagine a simple database storing information for students' grades.
 Design what this database might look like and provide a SQL query to return a list of the honor roll
 students (top 10%), sorted by their grade point average. 
 
-@@@@@@@@@
+14.7 Mezuniyet Veritabanı:  Öğrencilerin notları için bilgi depolayan basit bir veritabanı düşünün.  Bu veritabanının neye benzeyeceğini tasarlayın ve öğrencilerin (%10) not ortalamasına göre sıralandıkları bir şeref listesi oluşturmak için SQL sorgusu yapın. 
+
 15: Threadler ve Locklar
 
 15.1 Thread vs. Process: What's the difference between a thread and a process? 
+15.1  İş parçacığına karşı işlem(Süreç):  İş parçacığı ile bir işlem arasındaki fark nedir?
 
 15.2 Context Switch: How would you measure the time spent in a context switch? 
-
+  15.2 Context Switch (Şalter Bağlantısı):  Context Switch'te harcanan zamanı nasıl ölçersiniz?
 15.3 Dining Philosophers: In the famous dining philosophers problem, a bunch of philosophers are
 sitting around a circular table with one chopstick between each of them. A philosopher needs both
 chopsticks to eat, and always picks up the left chopstick before the right one. A deadlock could
 potentially occur if all the philosophers reached for the left chopstick atthe same time. Using threads
 and locks, implement a simulation of the dining philosophers problem that prevents deadlocks. 
-
+  15.3 Yemek Filozofları:  Ünlü yemek filozofları probleminde, bir grup filozof dairesel bir masanın etrafında oturuyor ve her filozof arasında bir yemek çubuğu bulunuyor.  Bir filozofun yemek yiyebilmesi için iki çubuğa ihtiyacı var ve her zaman sağdaki çubuktan önce soldaki çubuğu alır. Tüm filozoflar aynı anda önce soldaki çubuğu alırsa kilitlenme yaşanır.  (Çünkü iki çubuğa ihtiyaçları vardır ama hepsi soldakini alırsa, sağlarında çubuk kalmaz ve hiçbiri yemek yiyemez.) İşlem parçacığı kullanarak, bu problemin kilitlenmesini önleyen bir simülasyon uygulayın. 
 15.4 Deadlock-Free Class: Design a class which provides a lock only if there are no possible deadlocks. 
-
+ 15.4 Deadlock-Free Sınıfı: Kilitlenme olmadığında, kilitlenmeyi sağlayan bir sınıf tasarlayın.
 15.5 Call In Order: Suppose we have the following code:
 public class Foo {
 public Foo() { ... }
@@ -823,11 +846,18 @@ public void third() { ... }
 The same instance of Foo will be passed to three different threads. ThreadA will call first threadB
 will call second, and thread( will call third. Design a mechanism to ensure that first is called
 before second and second is called before third. 
-
+  15.5 Sırayla Ara:  Aşağıdaki gibi bir kodumuz olduğunu varsayalım:  public class Foo {
+public Foo() { ... }
+public void first() { ... }
+public void second() { ... }
+public void third() { ... }
+}
+Aynı 'Foo' üç farklı iş parçacığına iletilecek. ThreadA ilk ThreadB'yi arayacak sonra
+ikinciyi arayacak ve son olarak üçüncüyü arayacak.  Arama sırasını tersine alacak bir mekanizma tasarlayın.
 15.6 Synchronized Methods: You are given a class with synchronized method A and a normal
 method B. If you have two threads in one instance of a program, can they both execute A at the
 same time? Can they execute A and B at the same time?
-
+  15.6  Senkronize Metotlar:  Senkronize metot A sınıfınız ve normal metot B sınıfınız var.  Eğer programın iki iş parçacıklı bir örneği varsa, ikisini de A sınıfı ile yapabilir misiniz? Veya A ve B sınıfını aynı anda kullanabilir misiniz? 
 
 15.7 FizzBuzz: In the classic problem FizzBuzz, you are told to print the numbers from 1 to n. However,
 when the number is divisible by 3, print "Fizz''. When it is divisible by 5, print "Buzz''. When it is
@@ -835,7 +865,9 @@ divisible by 3 and 5, print"FizzBuzz''. In this problem, you are asked to do thi
 Implement a multithreaded version of FizzBuzz with four threads. One thread checks for divisibility
 of 3 and prints"Fizz''. Another thread is responsible for divisibility of 5 and prints"Buzz''. A third thread
 is responsible for divisibility of 3 and 5 and prints "FizzBuzz''. A fourth thread does the numbers. ,
-
+   15.7
+FizzBuzz:  Klasik FizzBuzz probleminde, 1'den n'ye kadar olan sayıları yazdırmanız isteniyor.
+Sayı 3 ile bölünebiliyorsa: "Fizz"  Sayı 5 ile bölünebiliyorsa: "Buzz" Hem 3'e hem de 5'e bölünebiliyorsa:  "FizzBuzz '' yazdırılabilir. Bu problemi,  çok iş parçacıklı bir şekilde (multithreaded) ile yapmanız isteniyor. Dört iş parçacığı ile çok iş parçacıklı bir FizzBuzz sürümü uygulayın. Bir treaded 3 ile bölünebilirliği kontrol eder ve "Fizz '" yazar. Başka bir treaded 5 ile bölünebilirliği kontrol eder ve "Buzz" yazarr.  Üçüncü treaded ise hem 3 ile hem de 5 ile bölünebilirliğini kontrol eder ve "FizzBuzz '" yazar. 
 @@@@@@@@@@@
 16: Ek-Sorular: Orta Derece
 16.1 Number Swapper: Write a function to swap a number in place (that is, without temporary variables). 
@@ -1141,6 +1173,137 @@ ID1, ID2 : SIMILARITY
 19, 24  : 0.14285714285714285
 
 
+--**-----
+
+-- MySQL Script generated by MySQL Workbench
+-- Sat Dec  7 01:01:03 2019
+-- Model: New Model    Version: 1.0
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+SHOW WARNINGS;
+-- -----------------------------------------------------
+-- Schema ctci
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `ctci` ;
+
+-- -----------------------------------------------------
+-- Schema ctci
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `ctci` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+SHOW WARNINGS;
+USE `ctci` ;
+
+-- -----------------------------------------------------
+-- Table `Apartments`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Apartments` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `Apartments` (
+  `apartmentID` INT(11) NOT NULL,
+  `unitNumber` VARCHAR(45) NULL DEFAULT NULL,
+  `buildingID` INT(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`apartmentID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `AptTenant`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `AptTenant` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `AptTenant` (
+  `apartmentID` INT(11) NOT NULL,
+  `tenantID` INT(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`apartmentID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `Buildings`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Buildings` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `Buildings` (
+  `buildingID` INT(11) NOT NULL,
+  `complexID` INT(11) NULL DEFAULT NULL,
+  `buildingName` VARCHAR(45) NULL DEFAULT NULL,
+  `address` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`buildingID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `Complexes`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Complexes` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `Complexes` (
+  `complexID` INT(11) NOT NULL,
+  `complexName` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`complexID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `Requests`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Requests` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `Requests` (
+  `requestID` INT(11) NOT NULL,
+  `apartmentID` INT(11) NULL DEFAULT NULL,
+  `description` VARCHAR(45) NULL DEFAULT NULL,
+  `status` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`requestID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `Tenants`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Tenants` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `Tenants` (
+  `tenantID` INT(11) NOT NULL,
+  `tenantName` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`tenantID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+SHOW WARNINGS;
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
 
