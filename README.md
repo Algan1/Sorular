@@ -885,16 +885,23 @@ Sayı 3 ile bölünebiliyorsa: "Fizz"  Sayı 5 ile bölünebiliyorsa: "Buzz"�
 @@@@@@@@@@@
 16: Ek-Sorular: Orta Derece
 16.1 Number Swapper: Write a function to swap a number in place (that is, without temporary variables). 
+https://www.geeksforgeeks.org/swap-two-numbers-without-using-temporary-variable/
+16.1 Sayıların Yerini Değiştirici:  Bir sayıyı yerinde değiştirmek için bir fonksiyon yazın. (Yani, geçici değişkenler olmadan).
 
 16.2 Word Frequencies: Design a method to find the frequency of occurrences of any given word in a
 book. What if we were running this algorithm multiple times? 
 
+16.2 Kelime Frekansları:  Bir kitaptaki herhangi bir kelimenin kullanım sıklığını bulmak için bir yöntem tasarlayın. Peki bu algoritmayı birkaç kez çalıştırırsak ne olur?
+
 16.3 Intersection: Given two straight line segments (represented as a start point and an end point),
 compute the point of intersection, if any. 
+16.3 Kesişim:  Verilen iki düz çizgi parçasının, varsa kesişme noktasını hesaplayın. (Başlangıç ​​noktası ve bitiş noktası olarak gösterilir.)
 
 16.4 Tic Tac Win: Design an algorithm to figure out if someone has won a game of tic-tac-toe
+16.4 Tic tac win:  Bir kişinin, tic-tac-toe oyununu kazanıp kazanmadığını anlamak için bir algoritma tasarlayın.
 
 16.5 Factorial zeros: Write an algorithm which computes the number of trailing zeros in n factorial. 
+16.5 Faktörel sıfırlar:  n faktöriyeldeki sondaki sıfırların sayısını hesaplayan bir algoritma yazın.
 
 16.6 Smallest Difference: Given two arrays of integers, compute the pair of values (one value in each
 array) with the smallest (non-negative) difference. Return the difference.
@@ -902,14 +909,28 @@ EXAMPLE
 Input: {l, 3, 15, 11, 2}, {23, 127, 235, 19, 8}
 Output: 3. That is, the pair (11, 8). 
 
+16.6 En Küçük Fark: İki tamsayı array'i verildiğinde, değer çiftini (her array içindeki bir değer) en küçük (negatif olmayan) farkla hesaplayın. Farkı döndürün.
+Örnek:
+Girdi: {l, 3, 15, 11, 2}, {23, 127, 235, 19, 8}
+Çıktı: 3.
+That is, the pair (Bu çift) (11, 8). 
+
 16.7 Number Max: Write a method that finds the maximum of two numbers. You should not use if else
 or any other comparison operator. 
+
+16.7 En büyük sayı: İki sayıdan büyük olanı bulan bir yöntem yazın.
+"İf-else" veya başka bir karşılaştırma operatörü  kullanmamalısınız.
 
 16.8 English Int: Given any integer, print an English phrase that describes the integer (e.g., "One
 Thousand, Two Hundred Thirty Four"). 
 
+16.8 Tam sayının İngilizcesi:  Herhangi bir tam sayının,  harf ile İngilizce karşılığını yazın.   Örnek:  "Bin İki Yüz Otuz Dört "
+
 16.9 Operations: Write methods to implement the multiply, subtract, and divide operations for integers.
 The results of all of these are integers. Use only the add operator. 
+
+
+16.9 İşlemler: Tamsayılar için çarpma, çıkarma ve bölme işlemlerini yapma yöntemleri yazın. Hepsinin sonucu tamsayı olmalıdır. Sadece add operatörünü kullanın.
 
 16.10 Living People: Given a list of people with their birth and death years, implement a method to
 compute the year with the most number of people alive. You may assume that all people were born
@@ -917,9 +938,15 @@ between 1900 and 2000 (inclusive). If a person was alive during any portion of t
 be included in that year's count. For example, Person (birth= 1908, death= 1909) is included in the
 counts for both 1908 and 1909. 
 
+16.10  Yaşayan Kişiler:  Doğum ve ölüm yıllarının yer aldığı bir liste verildiğinde, en çok yaşayan insanın yaşadığı yılı hesaplayabileceğiniz bir yöntem yazın.
+Tüm insanların 1900 ile 2000 yılları arasında doğduğunu varsayalım. (Bu yıllar da dahil.) Eğer bir kişi o yılın herhangi bir döneminde yaşamışsa, o yıllar arasındaki sayıma dahil edilmeli.
+Örneğin, Kişi (doğum = 1908, ölüm = 1909), hem 1908 hem de 1909 yıllarının sayılarına dahil edilmiştir.
+
 16.11 Diving Board: You are building a diving board by placing a bunch of planks of wood end-to-end.
 There are two types of planks, one of length shorter and one of length longer. You must use
 exactly K planks of wood. Write a method to generate all possible lengths for the diving board
+
+16.11 Dalış tahtası: Tahta plakaları uc uca koyarak dalış tahtası inşaa ediyorsunuz. (Üzerinde zıplayarak dalış yapılan tahta.) Biri kısa, biri uzun olmak üzere iki tip tahta var. Kesinlikle "K" tane plaka kullanmalısın. Dalış tahtası yapmak için, mümkün olan tüm uzunlukları üretebileceğiniz bir yöntem yazın.
 
 16.12 XML Encoding: Since XML is very verbose, you are given a way of encoding it where each tag gets
 mapped to a pre-defined integer value. The language/grammar is as follows:
@@ -938,6 +965,70 @@ Becomes:
 1 4 McDowell 5 CA 0 2 3 Gayle 0 Some Message 0 0
 Write code to print the encoded version of an XML element (passed in Element and Attribute
 objects). 
+
+
+16.12 XML Kodlama:  XML çok ayrıntılı bir dildir. Bu nedenle her bir etiketin önceden tanımlanmış bir tamsayı değerine eşlendiği bir kodlama yöntemi size verilir.  Dil / gramer aşağıdaki gibidir: 
+Element --> Tag Attributes END Children END
+Attribute --> Tag Value
+END --> 0
+Tag --> some predefined mapping to int
+Value --> string value
+For example, the following XML might be converted into the compressed string below (assuming a
+mapping of family -> 1, person ->2, firstName -> 3, lastName -> 4, state
+-> 5).
+<family lastName="McDowell" state="CA">
+<person firstName="Gayle">Some Message</person>
+</family>
+Becomes:
+1 4 McDowell 5 CA 0 2 3 Gayle 0 Some Message 0 0  Bir XML öğesinin kodlu sürümünü yazdırmak için kod yazın.
+
+16.13 Bisect Kareler:  İki boyutlu bir düzlemde iki tane kare veriliyor. Bu iki kareyi, ikiye bölen bir çizgi bulun. Karenin üst ve alt taraflarının x eksenine paralel geçtiğini varsayın.
+
+16.14 En İyi Çizgi:  Üzerinde nokta bulunan iki boyutlu bir grafik verildiğinde, en çok sayıda noktadan geçen çizgiyi bulun.
+
+16.15 Master Mind: Master Mind'in oyunu aşağıdaki gibi oynanır;
+Bilgisayarın dört yuvası vardır ve her bir yuva kırmızı (R), sarı (Y), yeşil (G) ve mavi (B) olarak adlandırılır.  Örneğin, bilgisayarın RYGB'si (RGGB yazıyor normalde ama hatalı.) olabilir (Yuva # 1 kırmızı, Yuva # 2, Yuva # 3 yeşil, Yuva # 4 mavi).
+Bir kullanıcı olarak çözümü tahmin etmeye çalışıyorsunuz.   Örneğin, YRGB'yi tahmin edebilirsiniz.  Doğru slot için doğru rengi tahmin ettiğinizde, bir "hit: 'alırsınız, ancak yanlış slotta olan bir renk varsa," sahte hit: "alırsınız.  Bir kere "hit" olarak sayılan yuvanın bir daha asla "pseudo-hit" olarak sayılamayacağını unutmayın. Örneğin, asıl çözümü RGBY olan bir oyunda siz GGRR olarak tahmin ederseniz, bir hit ve bir sahte hit alırsınız. Bir tahmin ve bir çözüm verildiğinde, isabet sayısını ve sözde isabet sayısını veren bir yöntem yazın.
+
+16.16  Alt Sıralama:  Bir tamsayı dizisi verildiğinde, m ve n dizinlerini bulmak için bir yöntem yazın. Eğer m'den n ye kadar olan elemanları sıralarsanız, dizinin tamamı sıralanır.  n - m'yi en aza indirin. (Yani, en küçük türdeki bu diziyi bulun.)  Örneğin
+Girdi: 1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19
+Çıktı: (3, 9) 
+
+16.17 Bitişik Sıra: Size bir tamsayı dizisi veriliyor. En büyük toplam ile bitişik diziyi bulun. Toplamı döndür  Örneğin:   Input: 2, -8, 3, -2, 4, -10
+Output: 5 ( i. e • , { 3, -2, 4} ) 
+
+16.18  Desen Eşleştirme:  Size "desen" ve "değer" adında iki string verilir.  Desen stringi : Bir string içindeki, deseni tanımlayan a ve b harflerinden oluşur. Örneğin: catcatgocatgo stringi desen aabab ile eşleşir. (a=cat / b=go oluyor o zaman) Aynı zamanda a, ab ve b gibi kalıplarla eşleşir. Değerin kalıpla eşleşip eşleşmediğini belirlemek için bir yöntem yazın.
+
+16.19 Göl Boyutları:  Arazi değerini temsil eden bir tamsayı matrisine sahipsiniz. Bu değerler deniz seviyesinden ne kadar yüksek olunduğunu gösteriyor. Sıfır "0" değeri su anlamına gelir. (Deniz seviyesi anlamında diyor sanırım, emin olamadım.)   Göl dikey, yatay veya çapraz olarak bağlanmış bir su birikintisidir. Gölün büyüklüğü bağlı olan su hücrelerinin toplam sayısıdır. Matristeki tüm göllerin boyunu hesaplamak için bir yöntem yazın.  Örneğin:   Input:
+0 2 1 0
+0 1 0 1
+1 1 0 1
+0 1 0 1
+Output: 2, 4, 1 (in any order) 
+
+16.20 T9: Eski cep telefonlarındaki her sayı tuşu, bir harf grubu ile eşleşir. Her basamak 0-4 arası harf grubu ile eşleşir. Eşleşen kelimelerin bir listesini döndürmek için bir algoritma uygulayın. Size, geçerli bir kelime listesi verilmiştir. Eşleştirme, aşağıdaki şemada gösterilmiştir.  Örneğin:   Input: 8733
+Output: tree, used 
+
+ 16.21  Toplam Değişimi:  İki tamsayı array'i verildiğinde, iki array'i, aynı toplamı vermek üzere değiştirebileceğiniz bir çift değer bulun.  Örneğin:   lnput:{4, 1, 2, 1, 1, 2}and{3, 6, 3, 3}
+Output: {1, 3}  
+
+16.22  Langton'un Karıncası:  Bir karınca sonsuz beyaz ve siyah karelerden oluşan bir kafeste (ızgarada) oturuyor. Başlangıçta sağa bakar. Her adımda, aşağıdakileri yapar:
+(1) Beyaz bir karede, karenin rengini çevirir, 90 derece sağa (saat yönünde) çevirir ve bir birim ileri doğru ilerler.
+(2) Siyah bir karede, karenin rengini çevirir, saatin ters yönünde 90 derece sola çevirir ve bir birim ileri doğru hareket ettirir. Karınca tarafından yapılan ilk K hareketini simüle etmek için bir program yazın ve sonucu yazdırın.  Kafesi temsil edecek veri yapısının size verilmediğini unutmayın. Bu, kendini tasarlaman gereken bir şey. Yönteminizdeki tek girdi K olmalıdır. Son tabloyu yazdırmalı ve hiçbir şey döndürmemelisiniz. Yöntem imzası "void printKMoves (int K)" gibi bir şey olabilir.
+
+ 16.23  Rand 5'ten Rand7:   Rand S () 'e verilen rand7 () yöntemini uygulayın. Yani, 0 ile 4 arasında rasgele bir sayı üreten bir yöntem verildiğinde (dahil), 0 ile 6 arasında rasgele bir sayı üreten bir yöntem yazın (dahil)
+ 
+ 16.24 Toplamlı Çiftler:  Bir array içindeki tüm tamsayı çiftlerini, belirtilen bir değerde toplayan bir algoritma tasarlayın.
+ 
+ 16.25  LRU önbellek: (Hiçbir şey anlamadım bu sorudan.) 
+ 
+ En son kullanılan nesneye el koyacak bir önbellek yazın. 
+Önbellek, anahtarlardan değerlere eşlenmeli ve maksimum boyutta başlatılmalıdır . Son kullanılanlar dolu olduğunda en azını çıkarması gerekir.  Anahtarların tamsayılar ve değerlerin stringler olduğunu kabul edebilirsiniz.
+
+16.26  Hesap Makinesi: Pozitif tamsayılardan oluşan aritmetik bir denklem verildiğinde, +, -, * ve /,
+sonucu hesapla. (parantez yok)  Örneğin;   Input: 2*3+5/6*3+15 
+Output: 23.5           
+
 
 16.13 Bisect Squares: Given two squares on a two-dimensional plane, find a line that would cut these two
 squares in half. Assume that the top and the bottom sides of the square run parallel to the x-axis. 
