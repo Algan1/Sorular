@@ -966,8 +966,29 @@ Becomes:
 Write code to print the encoded version of an XML element (passed in Element and Attribute
 objects). 
 
+16.12 XML Encoding: Since XML is very verbose, you are given a way of encoding it where each tag gets
+mapped to a pre-defined integer value. The language/grammar is as follows:
+Element --> Tag Attributes END Children END
+Attribute --> Tag Value
+END --> 0
+Tag --> some predefined mapping to int
+Value --> string value
+For example, the following XML might be converted into the compressed string below (assuming a
+mapping of family -> 1, person ->2, firstName -> 3, lastName -> 4, state
+-> 5).
+<family lastName="McDowell" state="CA">
+<person firstName="Gayle">Some Message</person>
+</family>
+Becomes:
+1 4 McDowell 5 CA 0 2 3 Gayle 0 Some Message 0 0
+Write code to print the encoded version of an XML element (passed in Element and Attribute
+objects). 
+
 
 16.12 XML Kodlama:  XML çok ayrıntılı bir dildir. Bu nedenle her bir etiketin önceden tanımlanmış bir tamsayı değerine eşlendiği bir kodlama yöntemi size verilir.  Dil / gramer aşağıdaki gibidir: 
+
+NOT: Bizden istenen, Element, Attribute gibi XML özelliklerinin Java karşılıklarını yazmak. Ekrana yazdırırken de, bunları daha önceden belirlenen bir tamsayı ile simgelemek.
+
 Element --> Tag Attributes END Children END
 Attribute --> Tag Value
 END --> 0
@@ -982,59 +1003,20 @@ mapping of family -> 1, person ->2, firstName -> 3, lastName -> 4, state
 Becomes:
 1 4 McDowell 5 CA 0 2 3 Gayle 0 Some Message 0 0  Bir XML öğesinin kodlu sürümünü yazdırmak için kod yazın.
 
-16.13 Bisect Kareler:  İki boyutlu bir düzlemde iki tane kare veriliyor. Bu iki kareyi, ikiye bölen bir çizgi bulun. Karenin üst ve alt taraflarının x eksenine paralel geçtiğini varsayın.
-
-16.14 En İyi Çizgi:  Üzerinde nokta bulunan iki boyutlu bir grafik verildiğinde, en çok sayıda noktadan geçen çizgiyi bulun.
-
-16.15 Master Mind: Master Mind'in oyunu aşağıdaki gibi oynanır;
-Bilgisayarın dört yuvası vardır ve her bir yuva kırmızı (R), sarı (Y), yeşil (G) ve mavi (B) olarak adlandırılır.  Örneğin, bilgisayarın RYGB'si (RGGB yazıyor normalde ama hatalı.) olabilir (Yuva # 1 kırmızı, Yuva # 2, Yuva # 3 yeşil, Yuva # 4 mavi).
-Bir kullanıcı olarak çözümü tahmin etmeye çalışıyorsunuz.   Örneğin, YRGB'yi tahmin edebilirsiniz.  Doğru slot için doğru rengi tahmin ettiğinizde, bir "hit: 'alırsınız, ancak yanlış slotta olan bir renk varsa," sahte hit: "alırsınız.  Bir kere "hit" olarak sayılan yuvanın bir daha asla "pseudo-hit" olarak sayılamayacağını unutmayın. Örneğin, asıl çözümü RGBY olan bir oyunda siz GGRR olarak tahmin ederseniz, bir hit ve bir sahte hit alırsınız. Bir tahmin ve bir çözüm verildiğinde, isabet sayısını ve sözde isabet sayısını veren bir yöntem yazın.
-
-16.16  Alt Sıralama:  Bir tamsayı dizisi verildiğinde, m ve n dizinlerini bulmak için bir yöntem yazın. Eğer m'den n ye kadar olan elemanları sıralarsanız, dizinin tamamı sıralanır.  n - m'yi en aza indirin. (Yani, en küçük türdeki bu diziyi bulun.)  Örneğin
-Girdi: 1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19
-Çıktı: (3, 9) 
-
-16.17 Bitişik Sıra: Size bir tamsayı dizisi veriliyor. En büyük toplam ile bitişik diziyi bulun. Toplamı döndür  Örneğin:   Input: 2, -8, 3, -2, 4, -10
-Output: 5 ( i. e • , { 3, -2, 4} ) 
-
-16.18  Desen Eşleştirme:  Size "desen" ve "değer" adında iki string verilir.  Desen stringi : Bir string içindeki, deseni tanımlayan a ve b harflerinden oluşur. Örneğin: catcatgocatgo stringi desen aabab ile eşleşir. (a=cat / b=go oluyor o zaman) Aynı zamanda a, ab ve b gibi kalıplarla eşleşir. Değerin kalıpla eşleşip eşleşmediğini belirlemek için bir yöntem yazın.
-
-16.19 Göl Boyutları:  Arazi değerini temsil eden bir tamsayı matrisine sahipsiniz. Bu değerler deniz seviyesinden ne kadar yüksek olunduğunu gösteriyor. Sıfır "0" değeri su anlamına gelir. (Deniz seviyesi anlamında diyor sanırım, emin olamadım.)   Göl dikey, yatay veya çapraz olarak bağlanmış bir su birikintisidir. Gölün büyüklüğü bağlı olan su hücrelerinin toplam sayısıdır. Matristeki tüm göllerin boyunu hesaplamak için bir yöntem yazın.  Örneğin:   Input:
-0 2 1 0
-0 1 0 1
-1 1 0 1
-0 1 0 1
-Output: 2, 4, 1 (in any order) 
-
-16.20 T9: Eski cep telefonlarındaki her sayı tuşu, bir harf grubu ile eşleşir. Her basamak 0-4 arası harf grubu ile eşleşir. Eşleşen kelimelerin bir listesini döndürmek için bir algoritma uygulayın. Size, geçerli bir kelime listesi verilmiştir. Eşleştirme, aşağıdaki şemada gösterilmiştir.  Örneğin:   Input: 8733
-Output: tree, used 
-
- 16.21  Toplam Değişimi:  İki tamsayı array'i verildiğinde, iki array'i, aynı toplamı vermek üzere değiştirebileceğiniz bir çift değer bulun.  Örneğin:   lnput:{4, 1, 2, 1, 1, 2}and{3, 6, 3, 3}
-Output: {1, 3}  
-
-16.22  Langton'un Karıncası:  Bir karınca sonsuz beyaz ve siyah karelerden oluşan bir kafeste (ızgarada) oturuyor. Başlangıçta sağa bakar. Her adımda, aşağıdakileri yapar:
-(1) Beyaz bir karede, karenin rengini çevirir, 90 derece sağa (saat yönünde) çevirir ve bir birim ileri doğru ilerler.
-(2) Siyah bir karede, karenin rengini çevirir, saatin ters yönünde 90 derece sola çevirir ve bir birim ileri doğru hareket ettirir. Karınca tarafından yapılan ilk K hareketini simüle etmek için bir program yazın ve sonucu yazdırın.  Kafesi temsil edecek veri yapısının size verilmediğini unutmayın. Bu, kendini tasarlaman gereken bir şey. Yönteminizdeki tek girdi K olmalıdır. Son tabloyu yazdırmalı ve hiçbir şey döndürmemelisiniz. Yöntem imzası "void printKMoves (int K)" gibi bir şey olabilir.
-
- 16.23  Rand 5'ten Rand7:   Rand S () 'e verilen rand7 () yöntemini uygulayın. Yani, 0 ile 4 arasında rasgele bir sayı üreten bir yöntem verildiğinde (dahil), 0 ile 6 arasında rasgele bir sayı üreten bir yöntem yazın (dahil)
- 
- 16.24 Toplamlı Çiftler:  Bir array içindeki tüm tamsayı çiftlerini, belirtilen bir değerde toplayan bir algoritma tasarlayın.
- 
- 16.25  LRU önbellek: (Hiçbir şey anlamadım bu sorudan.) 
- 
- En son kullanılan nesneye el koyacak bir önbellek yazın. 
-Önbellek, anahtarlardan değerlere eşlenmeli ve maksimum boyutta başlatılmalıdır . Son kullanılanlar dolu olduğunda en azını çıkarması gerekir.  Anahtarların tamsayılar ve değerlerin stringler olduğunu kabul edebilirsiniz.
-
-16.26  Hesap Makinesi: Pozitif tamsayılardan oluşan aritmetik bir denklem verildiğinde, +, -, * ve /,
-sonucu hesapla. (parantez yok)  Örneğin;   Input: 2*3+5/6*3+15 
-Output: 23.5           
-
-
 16.13 Bisect Squares: Given two squares on a two-dimensional plane, find a line that would cut these two
 squares in half. Assume that the top and the bottom sides of the square run parallel to the x-axis. 
 
+
+16.13 
+ Bisect Kareler:  İki boyutlu bir düzlemde iki tane kare veriliyor. Bu iki kareyi, ikiye bölen bir çizgi bulun. Karenin üst ve alt taraflarının x eksenine paralel geçtiğini varsayın.
+https://massivealgorithms.blogspot.com/2015/07/find-line-to-cut-two-squares-in-half.html
+
+
 16.14 Best Line: Given a two-dimensional graph with points on it, find a line which passes the most
 number of points. 
+16.14  En İyi Çizgi:  Üzerinde rastgele noktalar bulunan iki boyutlu bir grafik verildiğinde, en çok sayıda noktadan geçen çizgiyi bulun.
+NOT:  (a4 kağıdı üzerine kurşun kalemle oluşturulan noktalar gibi düşünülebilir) 
+
 
 16.15 Master Mind: The G ame of Master Mind is played as follows:
 The computer has four slots, and each slot will contain a ball that is red (R), yellow (Y), green (G) or
@@ -1048,6 +1030,13 @@ For example, if the actual solution is RGBY and you guess GGRR, you have one hit
 Write a method that, given a guess and a solution, returns the number of hits and pseudo-hits.
 pg 183 
 
+
+16.15
+  Master Mind: Master Mind'in oyunu aşağıdaki gibi oynanır;
+Bilgisayarın dört yuvası vardır ve her bir yuva kırmızı (R), sarı (Y), yeşil (G) ve mavi (B) olarak adlandırılır.  Örneğin, bilgisayarın RYGB'si (RGGB yazıyor normalde ama hatalı.) olabilir (Yuva # 1 kırmızı, Yuva # 2, Yuva # 3 yeşil, Yuva # 4 mavi).
+Bir kullanıcı olarak çözümü tahmin etmeye çalışıyorsunuz.   Örneğin, YRGB'yi tahmin edebilirsiniz.  Doğru slot için doğru rengi tahmin ettiğinizde, bir "hit: 'alırsınız, ancak yanlış slotta olan bir renk varsa," sahte hit: "alırsınız.  Bir kere "hit" olarak sayılan yuvanın bir daha asla "pseudo-hit" olarak sayılamayacağını unutmayın. Örneğin, asıl çözümü RGBY olan bir oyunda siz GGRR olarak tahmin ederseniz, bir hit ve bir sahte hit alırsınız. Bir tahmin ve bir çözüm verildiğinde, isabet sayısını ve sözde isabet sayısını veren bir yöntem yazın.
+https://www.webgamesonline.com/mastermind/index.php
+
 16.16 Sub Sort: Given an array of integers, write a method to find indices m and n such that if you sorted
 elements m through n, the entire array would be sorted. Minimize n - m (that is, find the smallest
 such sequence).
@@ -1055,16 +1044,28 @@ EXAMPLE
 Input: 1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19
 Output: (3, 9) 
 
+16.16  Alt Sıralama:  Bir tamsayı dizisi verildiğinde, m ve n dizinlerini bulmak için bir yöntem yazın. Eğer m'den n ye kadar olan elemanları sıralarsanız, dizinin tamamı sıralanır.  n - m'yi en aza indirin. (Yani, en küçük türdeki bu diziyi bulun.)  Örneğin
+Girdi: 1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19
+Çıktı: (3, 9) 
+
+
 16.17 Contiguous Sequence: You are given an array of integers (both positive and negative). Find the
 contiguous sequence with the largest sum. Return the sum.
 EXAMPLE
 Input: 2, -8, 3, -2, 4, -10
 Output: 5 ( i. e • , { 3, -2, 4} ) 
 
+16.17 Bitişik Sıra: Size bir tamsayı dizisi veriliyor. En büyük toplam ile bitişik diziyi bulun. Toplamı döndür  Örneğin:   Input: 2, -8, 3, -2, 4, -10
+Output: 5 ( i. e • , { 3, -2, 4} ) 
+
 16.18 Pattern Matching: You are given two strings, pattern and value. The pattern string consists of
 just the letters a and b, describing a pattern within a string. For example, the string catcatgocatgo
 matches the pattern aabab (where cat is a and go is b). It also matches patterns like a, ab, and b.
 Write a method to determine if value matches pattern. 
+
+16.18  Desen Eşleştirme:  Size "desen" ve "değer” olan iki string verilir.  Desen stringi : Bir string içindeki, deseni tanımlayan a ve b harflerinden oluşur. Örneğin: catcatgocatgo stringi aabab deseni 
+  ile eşleşir. (a=cat / b=go oluyor o zaman) 
+ Aynı zamanda a, ab ve b gibi kalıplarla eşleşir. Değerin kalıpla eşleşip eşleşmediğini belirlemek için bir yöntem yazın.
 
 16.19 Pond Sizes: You have an integer matrix representing a plot of land, where the value at that location
 represents the height above sea level. A value of zero indicates water. A pond is a region of water
@@ -1077,6 +1078,15 @@ Input:
 1 1 0 1
 0 1 0 1
 Output: 2, 4, 1 (in any order) 
+NOT: Anladığım kadarı ile, 0’ların birbirlerine dokunduğu yerleri hesaplatıyor.
+
+16.19 Göl Boyutları:  Arazi değerini temsil eden bir tamsayı matrisine sahipsiniz. Bu değerler deniz seviyesinden ne kadar yüksek olunduğunu gösteriyor. Sıfır "0" değeri su anlamına gelir. (Deniz seviyesi anlamında diyor sanırım, emin olamadım.)   Göl dikey, yatay veya çapraz olarak bağlanmış bir su birikintisidir. Gölün büyüklüğü bağlı olan su hücrelerinin toplam sayısıdır. Matristeki tüm göllerin boyunu hesaplamak için bir yöntem yazın.  Örneğin:   Input:
+0 2 1 0
+0 1 0 1
+1 1 0 1
+0 1 0 1
+Output: 2, 4, 1 (in any order) 
+
 
 16.20 T9: On old cell phones, users typed on a numeric keypad and the phone would provide a list of words
 that matched these numbers. Each digit mapped to a set of O - 4 letters. Implement an algorithm
@@ -1086,11 +1096,19 @@ EXAMPLE
 Input: 8733
 Output: tree, used 
 
+16.20 T9: Eski cep telefonlarındaki her sayı tuşu, bir harf grubu ile eşleşir. Her basamak 0-4 arası harf grubu ile eşleşir. Eşleşen kelimelerin bir listesini döndürmek için bir algoritma uygulayın. Size, geçerli bir kelime listesi verilmiştir. Eşleştirme, aşağıdaki şemada gösterilmiştir.  Örneğin:   Input: 8733
+Output: tree, used 
+
+
+
 16.21 Sum Swap: Given two arrays of integers, find a pair of values (one value from each array) that you
 can swap to give the two arrays the same sum.
 EXAMPLE
 lnput:{4, 1, 2, 1, 1, 2}and{3, 6, 3, 3}
 Output: {1, 3} 
+ 16.21  Toplam Değişimi:  İki tamsayı array'i verildiğinde, iki array'i, aynı toplamı vermek üzere değiştirebileceğiniz bir çift değer bulun.  Örneğin:   lnput:{4, 1, 2, 1, 1, 2}and{3, 6, 3, 3}
+Output: {1, 3}  
+
 
 16.22 Langton's Ant: An ant is sitting on an infinite grid of white and black squares. It initially faces right.
 At each step, it does the following:
@@ -1102,24 +1120,43 @@ Write a program to simulate the first K moves that the ant makes and print the f
 Note that you are not provided with the data structure to represent the grid. This is something you
 must design yourself. The only input to your method is K. You should print the final grid and return
 nothing. The method signature might be something like void printKMoves ( int K). 
+16.22  Langton'un Karıncası:  Bir karınca sonsuz beyaz ve siyah karelerden oluşan bir kafeste (ızgarada) oturuyor. Başlangıçta sağa bakar. Her adımda, aşağıdakileri yapar:
+(1) Beyaz bir karede, karenin rengini çevirir, 90 derece sağa (saat yönünde) çevirir ve bir birim ileri doğru ilerler.
+(2) Siyah bir karede, karenin rengini çevirir, saatin ters yönünde 90 derece sola çevirir ve bir birim ileri doğru hareket ettirir. Karınca tarafından yapılan ilk K hareketini simüle etmek için bir program yazın ve sonucu yazdırın.  Kafesi temsil edecek veri yapısının size verilmediğini unutmayın. Bu, kendini tasarlaman gereken bir şey. Yönteminizdeki tek girdi K olmalıdır. Son tabloyu yazdırmalı ve hiçbir şey döndürmemelisiniz. Yöntem imzası "void printKMoves (int K)" gibi bir şey olabilir.
+
 
 16.23 Rand7 from Rand 5: Implement a method rand7 () given rand S (). That is, given a method that
 generates a random number between O and 4 (inclusive), write a method that generates a random
 number between O and 6 (inclusive). 
+ 16.23  Rand 5'ten Rand7:   Rand S () 'e verilen rand7 () yöntemini uygulayın. Yani, 0 ile 4 arasında rasgele bir sayı üreten bir yöntem verildiğinde (dahil), 0 ile 6 arasında rasgele bir sayı üreten bir yöntem yazın (dahil)
+ 
+
 
 16.24 Pairs with Sum: Design an algorithm to find all pairs of integers within an array which sum to a
 specified value. 
+ 16.24 Toplamlı Çiftler:  Bir array içindeki tüm tamsayı çiftlerini, belirtilen bir değerde toplayan bir algoritma tasarlayın.
+ 
+ 
 
 16.25 LRU Cache: Design and build a "least recently used" cache, which evicts the least recently used item.
 The cache should map from keys to values (allowing you to insert and retrieve a value associated
 with a particular key) and be initialized with a max size. When it is full, it should evict the least
 recently used item. You can assume the keys are integers and the values are strings
+16.25  LRU önbellek: (Hiçbir şey anlamadım bu sorudan.) 
+ 
+ En son kullanılan nesneye el koyacak bir önbellek yazın. 
+Önbellek, anahtarlardan değerlere eşlenmeli ve maksimum boyutta başlatılmalıdır . Son kullanılanlar dolu olduğunda en azını çıkarması gerekir.  Anahtarların tamsayılar ve değerlerin stringler olduğunu kabul edebilirsiniz.
+
 
 16.26 Calculator: Given an arithmetic equation consisting of positive integers,+,-,* and/ (no parentheses),
 compute the result.
 EXAMPLE
 Input: 2*3+5/6*3+15 
 Output: 23.5 
+
+16.26  Hesap Makinesi: Pozitif tamsayılardan oluşan aritmetik bir denklem verildiğinde, +, -, * ve /,
+sonucu hesapla. (parantez yok)  Örneğin;   Input: 2*3+5/6*3+15 
+Output: 23.5           
 
 @@@@@@@@@@@@@@@@@
 16: Ek-Sorular: Zor  
@@ -1409,7 +1446,6 @@ SHOW WARNINGS;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
 
 
 
