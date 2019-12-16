@@ -1096,18 +1096,22 @@ EXAMPLE
 Input: 8733
 Output: tree, used 
 
-16.20 T9: Eski cep telefonlarındaki her sayı tuşu, bir harf grubu ile eşleşir. Her basamak 0-4 arası harf grubu ile eşleşir. Eşleşen kelimelerin bir listesini döndürmek için bir algoritma uygulayın. Size, geçerli bir kelime listesi verilmiştir. Eşleştirme, aşağıdaki şemada gösterilmiştir.  Örneğin:   Input: 8733
+16.20 T9: Eski cep telefonlarındaki her sayı tuşu, bir harf grubu ile eşleşir. Her bir rakam 0-4 arası harf grubu ile eşleşir. Eşleşen kelimelerin bir listesini döndürmek için bir algoritma uygulayın. Size, geçerli bir kelime listesi verilmiştir. Eşleştirme, aşağıdaki şemada gösterilmiştir.
+Örneğin:   Input: 8733
 Output: tree, used 
 
-
-
+ 
 16.21 Sum Swap: Given two arrays of integers, find a pair of values (one value from each array) that you
 can swap to give the two arrays the same sum.
 EXAMPLE
 lnput:{4, 1, 2, 1, 1, 2}and{3, 6, 3, 3}
 Output: {1, 3} 
- 16.21  Toplam Değişimi:  İki tamsayı array'i verildiğinde, iki array'i, aynı toplamı vermek üzere değiştirebileceğiniz bir çift değer bulun.  Örneğin:   lnput:{4, 1, 2, 1, 1, 2}and{3, 6, 3, 3}
-Output: {1, 3}  
+ 16.21  Toplam Değişimi:  İki tamsayı array'i verildiğinde, iki array'in rakamlarının toplamının da aynı olması için değiştirebileceğiniz bir çift değer bulun.  
+
+Örneğin:
+   lnput:{4, 1, 2, 1, 1, 2}.      (Rakamları toplamı: 10)
+           {3, 6, 3, 3}.    (Rakamları toplamı: 15)
+Output: {1, 3}   ( Bu ikisi yer değiştirince, rakamları toplamı 13 olup eşitlenir.)
 
 
 16.22 Langton's Ant: An ant is sitting on an infinite grid of white and black squares. It initially faces right.
@@ -1120,33 +1124,41 @@ Write a program to simulate the first K moves that the ant makes and print the f
 Note that you are not provided with the data structure to represent the grid. This is something you
 must design yourself. The only input to your method is K. You should print the final grid and return
 nothing. The method signature might be something like void printKMoves ( int K). 
-16.22  Langton'un Karıncası:  Bir karınca sonsuz beyaz ve siyah karelerden oluşan bir kafeste (ızgarada) oturuyor. Başlangıçta sağa bakar. Her adımda, aşağıdakileri yapar:
-(1) Beyaz bir karede, karenin rengini çevirir, 90 derece sağa (saat yönünde) çevirir ve bir birim ileri doğru ilerler.
-(2) Siyah bir karede, karenin rengini çevirir, saatin ters yönünde 90 derece sola çevirir ve bir birim ileri doğru hareket ettirir. Karınca tarafından yapılan ilk K hareketini simüle etmek için bir program yazın ve sonucu yazdırın.  Kafesi temsil edecek veri yapısının size verilmediğini unutmayın. Bu, kendini tasarlaman gereken bir şey. Yönteminizdeki tek girdi K olmalıdır. Son tabloyu yazdırmalı ve hiçbir şey döndürmemelisiniz. Yöntem imzası "void printKMoves (int K)" gibi bir şey olabilir.
+16.22  Langton'un Karıncası:  Bir karınca sonsuz beyaz ve siyah karelerden oluşan bir Grid durmaktadır.
+  Başlangıçta sağa bakar. Her adımda, aşağıdakileri yapar:
+(1) Beyaz bir karede, karenin rengini değiştirir, 90 derece sağa (saat yönünde) çevirir ve bir birim ileri doğru ilerler.
+(2) Siyah bir karede, karenin rengini değiştirir, saatin ters yönünde 90 derece sola çevirir ve bir birim ileri doğru hareket ettirir. 
+Karınca tarafından yapılan ilk K hareketini simüle etmek için bir program yazın ve sonucu yazdırın.  
+Grid temsil edecek veri yapısının size verilmediğini unutmayın. Bu, kendini tasarlaman gereken bir şey. 
+Yönteminizdeki tek girdi K olmalıdır. Son tabloyu yazdırmalı ve hiçbir şey döndürmemelisiniz. 
+Method  şöyle tanımlanabilir: "void printKMoves (int K)" 
 
 
-16.23 Rand7 from Rand 5: Implement a method rand7 () given rand S (). That is, given a method that
-generates a random number between O and 4 (inclusive), write a method that generates a random
-number between O and 6 (inclusive). 
- 16.23  Rand 5'ten Rand7:   Rand S () 'e verilen rand7 () yöntemini uygulayın. Yani, 0 ile 4 arasında rasgele bir sayı üreten bir yöntem verildiğinde (dahil), 0 ile 6 arasında rasgele bir sayı üreten bir yöntem yazın (dahil)
+16.23 Rand7() from Rand5(): Implement a method rand7() given rand5(). 
+
+That is, given a method that generates a random number between 0 and 4 (inclusive), write a method that generates a random
+number between 0 and 6 (inclusive). 
+
+ 16.23  
+Rand 5'ten Rand7:   Rand5() kullanarak,  rand7() yöntemini yazın.
+Yani, 0 ile 4 (0 ve 4 dahil) arasında rasgele bir sayı üreten bir yöntem verildiğinde, 0 ile 6  (0 ve 6 dahil) 
+arasında rasgele bir sayı üreten bir yöntem yazın.
  
-
 
 16.24 Pairs with Sum: Design an algorithm to find all pairs of integers within an array which sum to a
 specified value. 
- 16.24 Toplamlı Çiftler:  Bir array içindeki tüm tamsayı çiftlerini, belirtilen bir değerde toplayan bir algoritma tasarlayın.
- 
- 
+
+16.24.  Toplamlı Çiftler:  Bir array içindeki tüm tamsayı çiftlerini, belirtilen bir (hedef) değerde  toplayan bir algoritma tasarlayın.
+ Örnek: {3, 4, 6, 7, 8, 9}.   Hedef: 14
+ Sonuç: 6, 8
 
 16.25 LRU Cache: Design and build a "least recently used" cache, which evicts the least recently used item.
 The cache should map from keys to values (allowing you to insert and retrieve a value associated
 with a particular key) and be initialized with a max size. When it is full, it should evict the least
 recently used item. You can assume the keys are integers and the values are strings
 16.25  LRU önbellek: (Hiçbir şey anlamadım bu sorudan.) 
+  Aslında, HashMap veya HashSet kullanarak; anahtar-değer ikililerini saklamamız ve bu bellek dolunca, en son kullanılan nesneleri göstermemiz isteniyor.
  
- En son kullanılan nesneye el koyacak bir önbellek yazın. 
-Önbellek, anahtarlardan değerlere eşlenmeli ve maksimum boyutta başlatılmalıdır . Son kullanılanlar dolu olduğunda en azını çıkarması gerekir.  Anahtarların tamsayılar ve değerlerin stringler olduğunu kabul edebilirsiniz.
-
 
 16.26 Calculator: Given an arithmetic equation consisting of positive integers,+,-,* and/ (no parentheses),
 compute the result.
@@ -1155,11 +1167,12 @@ Input: 2*3+5/6*3+15
 Output: 23.5 
 
 16.26  Hesap Makinesi: Pozitif tamsayılardan oluşan aritmetik bir denklem verildiğinde, +, -, * ve /,
-sonucu hesapla. (parantez yok)  Örneğin;   Input: 2*3+5/6*3+15 
+sonucu hesapla. (parantez yok 
+)  Örneğin;   Input: 2*3+5/6*3+15 
 Output: 23.5           
 
-@@@@@@@@@@@@@@@@@
-16: Ek-Sorular: Zor  
+ 
+17: Ek-Sorular: Zor  
 17 .1 Add Without Plus: Write a function that adds two numbers. You should not use+ or any arithmetic
 operators. 
 
@@ -1446,6 +1459,5 @@ SHOW WARNINGS;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
 
 
