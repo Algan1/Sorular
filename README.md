@@ -1273,11 +1273,20 @@ and 7. Note that 3, 5, and 7 do not have to be factors, but it should not have a
 For example, the first several multiples would be (in order) 1, 3, 5, 7, 9, 15, 21. 
 
 17.9
-Kth Multiple: 
-Asal çarpanları 3, 5 ve 7 olan "kth" sayısını bulmak için bir algoritma tasarlayın. 3, 5 ve 7'den başka asal çarpanı olmadığını unutmayın.
+Kth Multiple: (Bilmem kaçıncı katsayı)
+Asal çarpanları 3, 5 ve 7 olan "kth" (bilmem kaçıncı) sayısını bulmak için bir algoritma tasarlayın. 
+3, 5 ve 7'den başka asal çarpanı olmadığını unutmayın.
 
-Örneğin, ilk birkaç kat (sırayla) olacaktır 1, 3, 5, 7, 9, 15, 21
-
+Örneğin, ilk birkaç katsayı şöyle (sırayla) olacaktır 
+k      sayı
+1	1
+2       3    
+3	5
+4	7
+5	9
+6	15
+7	21
+ 
 
 
 17 .10 Majority Element: A majority element is an element that makes up more than half of the items in
@@ -1286,19 +1295,16 @@ return -1. Do this in O(N) time and 0(1) space.
 Input: 1 2 5 9 5 9 5 5 5
 Output: 5 
 17.10
-Çoğunluk Öğesi: 
-Array  içindeki öğelerin yarısından fazlasını oluşturan bir öğeye denir. Pozitif bir tamsayı arrayi verildiğinde, çoğunluk elemanını bulun. Çoğunluk unsuru yoksa -1 döndür. Bunu O (N) zamanı ve 0 (1) boşluğunda yapın.
+Çoğunluk olan eleman: 
+Array  içindeki öğelerin yarısından fazlasını oluşturan bir öğeye "çoğunluk elemanı" denir. Pozitif bir tamsayı arrayi verildiğinde, çoğunluk elemanını bulun. Çoğunluk elemanı yoksa -1 döndür. Bunu O (N) zaman ve 0(1) mekan karmaşıkığında yapın.
 
-
-
-
-17 .11 Word Distance: You have a large text file containing words. Given any two words, find the shortest
+17.11 Word Distance: You have a large text file containing words. Given any two words, find the shortest
 distance (in terms of number of words) between them in the file. If the operation will be repeated
 many times for the same file (but different pairs of words), can you optimize your solution? 
 
 17.11
 Kelime Mesafesi: 
-İçerisinde "kelime" olan büyük bir metin dosyanız var. Herhangi iki kelimenin arasındaki en kısa mesafeyi (kelime sayısı cinsinden) bulun. İşlem, aynı dosya için (ancak farklı sözcük çiftleri) defalarca tekrarlanacaksa, çözümünüzü optimize edebilir misiniz?
+İçerisinde  kelimeler olan büyük bir metin dosyanız var. Herhangi iki kelimenin arasındaki en kısa mesafeyi (kelime sayısı cinsinden) bulun. İşlem, aynı dosya için (ancak farklı sözcük çiftleri) defalarca tekrarlanacaksa, çözümünüzü optimize edebilir misiniz?
 
 
 
@@ -1310,10 +1316,15 @@ into a doubly linked list. The values should be kept in order and the operation 
 in place (that is, on the original data structure). 
 17.12
 
-BiNode: 
-Diğer iki düğüme işaret eden BiNode adlı basit bir veri yapısını düşünün. BiNode veri yapısı, ikilik bir arama ağacı (burada düğüm 1 sol düğüm ve düğüm2 sağ düğümdür) veya iki kat bağlantılı bir listeyi temsil etmek için kullanılabilir. (Burada Vnode1 sol düğüm ve Vnode2 sağ düğümdür.) İkili bir arama ağacını (BiNode ile uygulanmış) iki kat bağlantılı bir listeye dönüştürmek için bir yöntem uygulayın. Değerler sıralı tutulmalı ve işlem yapılmalıdır. (yani, orijinal veri yapısında)
+BiNode: (Özetle bir Binary Tree'yi, bir Doubly Linked Liste çevirmemiz isteniyor: https://www.geeksforgeeks.org/in-place-convert-a-given-binary-tree-to-doubly-linked-list/)
+Diğer iki düğüme işaret eden BiNode adlı basit bir veri yapısını düşünün. BiNode veri yapısı, Binary Seatch Tree (burada node1 sol düğüm ve node2 sağ düğümdür) veya Doubly Linked Listi temsil etmek için kullanılabilir.
+(Burada node1 sol düğüm ve node2 sağ düğümdür.) 
 
-
+Buradaki BiNode veri yapısı, şu şekilde tanımlanabilir:
+public class BiNode {
+    public BiNode nodel, node2;
+    public int data;
+}
 
 
 17.13 Re-Space: Oh, no! You have accidentally removed all spaces, punctuation, and capitalization in a
@@ -1328,7 +1339,7 @@ Output: jess looked just like tim her brother (7 unrecognized characters)
 
 17.13
 Re-Space: 
-Uzun bir belgede tüm boşlukları, noktalama işaretlerini ve büyük harfleri yanlışlıkla kaldırdınız. Örneğin; "Bilgisayarı sıfırladım. Hala açılmadı!" Gibi bir cümle. "ilgisayarısıfırladımalaaçılmadı" oldu. Noktalama işaretleri ve büyük harf kullanımı ile daha sonra ilgileneceksiniz; şu anda boşlukları yeniden yerleştirmeniz gerekiyor. Kelimelerin çoğu sözlükte var ama birkaçı değil. Bir sözlük (dizelerin listesi) ve belge (bir dize) göz önüne alındığında, belgeyi tanınmayan karakter sayısını en aza indirecek şekilde birleştirmek için bir algoritma tasarlayın.
+Uzun bir belgede tüm boşlukları, noktalama işaretlerini ve büyük harfleri yanlışlıkla kaldırdınız. Örneğin; "Bilgisayara reset attım. Hala açılmadı!" Gibi bir cümle. "bilgisayararesetattimhalaaçılmadı" oldu. Noktalama işaretleri ve büyük harf kullanımı ile daha sonra ilgileneceksiniz; şu anda boşlukları yeniden yerleştirmeniz gerekiyor. Kelimelerin çoğu sözlükte var ama birkaçı değil. Bir sözlük (dizelerin listesi) ve belge (bir dize) göz önüne alındığında, belgeyi tanınmayan karakter sayısını en aza indirecek şekilde birleştirmek için bir algoritma tasarlayın.
 
 Örneğin: 
 
@@ -1336,14 +1347,14 @@ Input : jesslookedjustliketimherbrother
 
 Output: jess looked just like tim her brother (7 unrecognized characters)
 
-
+ (Bize bir sözlük gibi kelime arrayi veriliyor. Dolayısı ile, o ân bir sözcük yakaladığımızı o sözlüğe bakarak anlayacağız)
 
 17 .14 Smallest K: Design an algorithm to find the smallest K numbers in an array
 
 17.14
 
 En Küçük K: 
-Bir arraydeki en küçük K sayısını bulmak için bir algoritma tasarlayın
+Bir arraydeki en küçük Kncı sayıyı bulmak için bir algoritma tasarlayın
 
 
 
@@ -1353,7 +1364,7 @@ in the list.’
 
 17.15
 En Uzun Kelime: 
-Bir sözcük listesi verildiğinde, listedeki diğer sözcüklerden en uzun kelimeyi bulmak için bir program yaz.
+Bir sözcük listesi verildiğinde, listedeki diğer sözcüklerden türetilmiş en uzun kelimeyi bulmak için bir program yaz.
 
 
 17.16 The Masseuse: A popular masseuse receives a sequence of back-to-back appointment requests
@@ -1362,7 +1373,7 @@ therefore she cannot accept any adjacent requests. Given a sequence of back-to-b
 (highest total booked minutes) set the masseuse can honor. Return the number of minutes.
 EXAMPLE
 Input: {30, 15, 60, 75, 45, 15, 15, 45}
-Output180 minutes ({30, 60, 45, 45}). 
+Output 180 minutes ({30, 60, 45, 45}). 
 
 
 17.16
@@ -1371,17 +1382,23 @@ Popüler bir masöz, bir dizi arka arkaya randevu talebi alır ve hangilerinin k
 
 Örneğin;
 
-Input: {30, 15, 60, 75, 45, 15, 15, 45}
+Input: {30, 15, 60, 75, 45, 15, 15, 45} (Kadının kullanabileceği dakika miktarı, bu elemanların toplamı kadardiye düşünüyoruz. Dolayısı ile eğer herhangi bir kabul ederse, 15 dakikalık arayı, diğerler sayılardan çıkarması gerekir. )
 
-Output180 minutes ({30, 60, 45, 45})
+Output 180 minutes ({30, 60, 45, 45})
+ 
 
-
-17.17 Multi Search: Given a string band an array of smaller strings T, design a method to search b for
+17.17 Multi Search: Given a string "b" and an array of smaller strings T, design a method to search "b" for
 each small string in T. 
 
 17.17
 Çoklu Arama: 
-Bir array bandına TO'dan daha küçük bir string dizisi verildiğinde, T'deki her küçük string için b'nin aranacağı bir yöntem tasarlayın
+Bir “b” Stringi, ve ondan daha küçük String kelimeler barındıran bir T arrayi veriliyor. T arrayindeki her bir kelime için, “b” String’i içinde arama yapan bir method geliştirin.
+ÖRN:
+T = {"is", "ppi", "hi", "sis", "i", "ssippi”} 
+
+b = "mississippi"
+
+ 
 
 
 
