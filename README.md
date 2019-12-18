@@ -1171,28 +1171,60 @@ sonucu hesapla. (parantez yok
 )  Örneğin;   Input: 2*3+5/6*3+15 
 Output: 23.5           
 
- 
+
 17: Ek-Sorular: Zor  
 17 .1 Add Without Plus: Write a function that adds two numbers. You should not use+ or any arithmetic
 operators. 
+17:1
+Artı Olmadan Ekle: 
+İki sayı ekleyen bir işlev yazın. "+" veya aritmetik operatörleri kullanmamalısınız
 
-17 .2 Shuffle: Write a method to shuffle a deck of cards. It must be a perfect shuffle-in other words, each
+17 .2 Shuffle: Write a method to shuffle a deck of cards. It must be a perfect shuffle in other words, each
 of the 52! permutations of the deck has to be equally likely. Assume that you are given a random
 number generator which is perfect. 
+17:2 
 
-17 .3 Random Set: Write a method to randomly generate a set of m integers from an array of size n. Each
-element must have equal probability of being chosen.
+Karıştır: 
+Bir deste kart karıştırmak için bir yöntem yazın. Başka bir deyişle mükemmel bir karıştırma olmalı, destedeki 52! kartın her birinin eşit dağılması gerekir. Mükemmel bir “rastgele sayı üretecinin" size verildiğini varsayalım.
+(NOT: aslında bir tamsayı dizisini her çalıştırmada farklı bir kombinasyon oluşturacak şekilde karıştırmamız bekleniyor)
 
-17 .4 Missing Number: An array A contains all the integers from O to n, except for one number which
+17 .3 Random Set: Write a method to randomly generate a set of m integers from an array of size n. Each element must have equal probability of being chosen.
+
+17.3
+
+Rastgele Küme:
+
+N boyutlu bir diziden, m elemanlı bir tamsayı kümesi üreten bir method yazın. Dizinin her bir elemanının seçilme ihtimali aynı olsun.
+
+17 .4 Missing Number: An array A contains all the integers from 0 to n, except for one number which
 is missing. In this problem, we cannot access an entire integer in A with a single operation. The
 elements of A are represented in binary, and the only operation we can use to access them is "fetch
 the jth bit of A[i];' which takes constant time. Write code to find the missing integer. Can you do it
 in O(n) time? 
 
+17.4
+
+Eksik Sayı:
+ A arrayi, 0 - n arasındaki bir tane sayı hariç tüm tamsayıları içerir. Bu problemde, A'daki bir tamsayıya tek bir işlemle erişemiyoruz. A'nın elemanları ikili (0-1) olarak temsil edilir. Bunlara erişmek için kullanabileceğimiz tek işlem, zaman alan A [i] 'nin jth bitini kullanmaktır. Eksik tamsayıyı bulmak için kod yazın. O(n) zamanında yapabilir misin?
+
+
+
 17.5 Letters and Numbers: Given an array filled with letters and numbers, find the longest subarray with
 an equal number of letters and numbers. 
 
-17 .6 Count of 2s: Write a method to count the number of 2s between O and n. 
+17.5
+Harfler ve Rakamlar: 
+Harf ve rakamlarla dolu bir array göz önüne alındığında, en uzun subarray'i, eşit sayıda harf ve sayı ile bulun.
+
+
+17 .6 Count of 2s: Write a method to count the number of 2s between 0 and n. 
+
+
+17.6
+2s saymak:
+
+0 ve n arasındaki “ikileri" (sayısını) saymak için bir yöntem yazın.
+
 
 17.7 Baby Names: Each year, the government releases a list of the 10,000 most common baby names
 and their frequencies (the number of babies with that name). The only problem with this is that
@@ -1208,25 +1240,66 @@ Names: John (15), Jon (12), Chris (13), Kris (4), Christopher (19)
 Synonyms: (Jon, John), (John, Johnny), (Chris, Kris), (Chris, Christopher)
 Output: John (27), Kris (36) 
 
+17.7
+Bebek İsimleri: 
+Her yıl, hükümet en yaygın 10.000 bebek isimlerinin ve sıklıklarının (bu isme sahip bebeklerin sayısı) bir listesini çıkarır. Ama aynı anlama gelen adların farklı kullanılması yüzünden sorun yaşanmaktadır.  Örneğin, "John" ve '' Jon "aslında aynı isimdir ancak listede ayrı olarak listelenir. İsimlerin ayrı olarak yazıldığı listeyi ve eşdeğer olarak yazıldığı liste göz önüne alındığında, her ismin gerçek istatistiğini çıkarabilmek için bir algoritma yazın. John ve Jon eş anlamlı ise, Jon ve Johnny eşanlamlıysa, John ve Johnny eşanlamlıdır. (Hem geçişli hem de simetriktir.) 
+Son listede, benzer olanlardan herhangi biri "gerçek ad" olarak kullanılabilir.
+
+Örneğin: 
+Input: 
+Names: John (15), Jon (12), Chris (13), Kris (4), Christopher (19)
+
+Synonyms: (Jon, John), (John, Johnny), (Chris, Kris), (Chris, Christopher)
+
+Output: John (27), Kris (36) 
+
+
+
 17.8 Circus Tower: A circus is designing a tower routine consisting of people standing atop one another's
 shoulders. For practical and aesthetic reasons, each person must be both shorter and lighter than
 the person below him or her. Given the heights and weights of each person in the circus, write a
 method to compute the largest possible number of people in such a tower. 
 
+(Hanoi Tower’da olduğu gibi, üstteki alttakinden kısa ve hafif olmalı.)
+17.8
+
+Sirk Kulesi: 
+Bir Sirk, birbirinin omuzlarında duran insanlardan oluşan bir kule tasarlıyor. Hem daha kolay olması, hem de daha estetik görünmesi sebebiyle her bir kişi kendisinin altındaki kişiden hem daha kısa hem de daha hafif olmalıdır. Sirkteki herkesin boy ve ağırlıkları göz önüne alındığında, böyle bir kulede mümkün olan en fazla insan sayısını hesaplamak için bir yöntem yazın.
+
+
+
 17 .9 Kth Multiple: Design an algorithm to find the kth number such that the only prime factors are 3, 5,
 and 7. Note that 3, 5, and 7 do not have to be factors, but it should not have any other prime factors.
 For example, the first several multiples would be (in order) 1, 3, 5, 7, 9, 15, 21. 
+
+17.9
+Kth Multiple: 
+Asal çarpanları 3, 5 ve 7 olan "kth" sayısını bulmak için bir algoritma tasarlayın. 3, 5 ve 7'den başka asal çarpanı olmadığını unutmayın.
+
+Örneğin, ilk birkaç kat (sırayla) olacaktır 1, 3, 5, 7, 9, 15, 21
+
+
 
 17 .10 Majority Element: A majority element is an element that makes up more than half of the items in
 an array. Given a positive integers array, find the majority element. If there is no majority element,
 return -1. Do this in O(N) time and 0(1) space.
 Input: 1 2 5 9 5 9 5 5 5
 Output: 5 
+17.10
+Çoğunluk Öğesi: 
+Array  içindeki öğelerin yarısından fazlasını oluşturan bir öğeye denir. Pozitif bir tamsayı arrayi verildiğinde, çoğunluk elemanını bulun. Çoğunluk unsuru yoksa -1 döndür. Bunu O (N) zamanı ve 0 (1) boşluğunda yapın.
+
+
 
 
 17 .11 Word Distance: You have a large text file containing words. Given any two words, find the shortest
 distance (in terms of number of words) between them in the file. If the operation will be repeated
 many times for the same file (but different pairs of words), can you optimize your solution? 
+
+17.11
+Kelime Mesafesi: 
+İçerisinde "kelime" olan büyük bir metin dosyanız var. Herhangi iki kelimenin arasındaki en kısa mesafeyi (kelime sayısı cinsinden) bulun. İşlem, aynı dosya için (ancak farklı sözcük çiftleri) defalarca tekrarlanacaksa, çözümünüzü optimize edebilir misiniz?
+
 
 
 17.12 BiNode: Consider a simple data structure called BiNode, which has pointers to two other nodes. The
@@ -1235,6 +1308,12 @@ and node2 is the right node) or a doubly linked list (where node1 is the previou
 is the next node). Implement a method to convert a binary search tree (implemented with BiNode)
 into a doubly linked list. The values should be kept in order and the operation should be performed
 in place (that is, on the original data structure). 
+17.12
+
+BiNode: 
+Diğer iki düğüme işaret eden BiNode adlı basit bir veri yapısını düşünün. BiNode veri yapısı, ikilik bir arama ağacı (burada düğüm 1 sol düğüm ve düğüm2 sağ düğümdür) veya iki kat bağlantılı bir listeyi temsil etmek için kullanılabilir. (Burada Vnode1 sol düğüm ve Vnode2 sağ düğümdür.) İkili bir arama ağacını (BiNode ile uygulanmış) iki kat bağlantılı bir listeye dönüştürmek için bir yöntem uygulayın. Değerler sıralı tutulmalı ve işlem yapılmalıdır. (yani, orijinal veri yapısında)
+
+
 
 
 17.13 Re-Space: Oh, no! You have accidentally removed all spaces, punctuation, and capitalization in a
@@ -1245,10 +1324,37 @@ to unconcatenate the document in a way that minimizes the number of unrecognized
 EXAMPLE
 Input jesslookedjustliketimherbrother
 Output: jess looked just like tim her brother (7 unrecognized characters)
+
+
+17.13
+Re-Space: 
+Uzun bir belgede tüm boşlukları, noktalama işaretlerini ve büyük harfleri yanlışlıkla kaldırdınız. Örneğin; "Bilgisayarı sıfırladım. Hala açılmadı!" Gibi bir cümle. "ilgisayarısıfırladımalaaçılmadı" oldu. Noktalama işaretleri ve büyük harf kullanımı ile daha sonra ilgileneceksiniz; şu anda boşlukları yeniden yerleştirmeniz gerekiyor. Kelimelerin çoğu sözlükte var ama birkaçı değil. Bir sözlük (dizelerin listesi) ve belge (bir dize) göz önüne alındığında, belgeyi tanınmayan karakter sayısını en aza indirecek şekilde birleştirmek için bir algoritma tasarlayın.
+
+Örneğin: 
+
+Input : jesslookedjustliketimherbrother
+
+Output: jess looked just like tim her brother (7 unrecognized characters)
+
+
+
 17 .14 Smallest K: Design an algorithm to find the smallest K numbers in an array
 
+17.14
+
+En Küçük K: 
+Bir arraydeki en küçük K sayısını bulmak için bir algoritma tasarlayın
+
+
+
+
 17.15 Longest Word: Given a list of words, write a program to find the longest word made of other words
-in the list.' 
+in the list.’ 
+
+17.15
+En Uzun Kelime: 
+Bir sözcük listesi verildiğinde, listedeki diğer sözcüklerden en uzun kelimeyi bulmak için bir program yaz.
+
 
 17.16 The Masseuse: A popular masseuse receives a sequence of back-to-back appointment requests
 and is debating which ones to accept. She needs a 15-minute break between appointments and
@@ -1258,8 +1364,26 @@ EXAMPLE
 Input: {30, 15, 60, 75, 45, 15, 15, 45}
 Output180 minutes ({30, 60, 45, 45}). 
 
+
+17.16
+Masöz: 
+Popüler bir masöz, bir dizi arka arkaya randevu talebi alır ve hangilerinin kabul edeceğini tartışır. Randevular arasında 15 dakikalık bir ara vermesi gerekiyor ve bu nedenle ard arda olan talepleri kabul edemiyor.  Back-to-back randevu talebi dizisi verildiğinde, masözün çalışabileceği en uygun zamanları (en yüksek toplam dakika tutanları) bulun. Dakika sayısını döndür.
+
+Örneğin;
+
+Input: {30, 15, 60, 75, 45, 15, 15, 45}
+
+Output180 minutes ({30, 60, 45, 45})
+
+
 17.17 Multi Search: Given a string band an array of smaller strings T, design a method to search b for
 each small string in T. 
+
+17.17
+Çoklu Arama: 
+Bir array bandına TO'dan daha küçük bir string dizisi verildiğinde, T'deki her küçük string için b'nin aranacağı bir yöntem tasarlayın
+
+
 
 17 .18 Shortest Supersequence: You are given two arrays, one shorter (with all distinct elements) and one
 longer. Find the shortest subarray in the longer array that contains all the elements in the shorter
@@ -1270,12 +1394,44 @@ Input:
 {7, 5, 9, 0, 2, 1, 3, 5. 7, 9. 1, 1, 5, 8, 8, 9, 7}
 Output:[7, 10] (the underlined portion above) 
 
+
+17.18
+
+En Kısa Süper dizi: 
+Biri diğerinden kısa olan (diğer tüm öğeleriyle birlikte) iki dizi verilir. Kısa dizideki tüm öğeleri içeren daha uzun dizideki en kısa subarrayi bulun. Öğeler herhangi bir sırada görünebilir.
+
+Örneğin; 
+
+Input:
+
+{1, 5, 9}
+
+{7, 5, 9, 0, 2, 1, 3, 5. 7, 9. 1, 1, 5, 8, 8, 9, 7}
+
+Output:[7, 10] (the underlined portion above
+
+
 17.19 Missing Two: You are given an array with all the numbers from 1 to N appearing exactly once,
 except for one number that is missing. How can you find the missing number in O(N) time and
 0( 1) space? What if there were two numbers missing? 
 
+
+17.19
+
+Kayıp İki: 
+Eksik olan bir sayı dışında, 1'den N'ye kadar olan tüm sayıların bir kez göründüğü bir dizi verilir. Eksik sayıyı O(N) zamanı ve 0(1) boşluğunda nasıl bulabilirsiniz? Peki iki rakam eksikse nasıl yaparsınız?
+
+
+
 17.20 Continuous Median: Numbers are randomly generated and passed to a method. Write a program
 to find and maintain the median value as new values are generated. 
+
+
+17.20
+Sürekli Medyan: 
+Sayılar rastgele oluşturulur ve bir yönteme iletilir. Yeni değerler üretilirken medyan değerini bulmak ve sürdürmek için bir program yazın.
+
+
 
 17.21 Volume of Histogram: Imagine a histogram (bar graph). Design an algorithm to compute the
 volume of water it could hold if someone poured water across the top. You can assume that each
@@ -1286,6 +1442,20 @@ lnput{0, 0, 4, 0, 0, 6, 0, 0, 3, 0, 5, 0, 1, 0, 0, 0}
 
 Output:26 
 
+
+17.21
+Histogramın Hacmi: 
+Histogram (çubuk grafik) düşünün. Birisi üste su dökerse, tutabileceği suyun hacmini hesaplamak için bir algoritma tasarlayın. Her histogram çubuğunun 1 genişliğine sahip olduğunu varsayabilirsiniz.
+
+
+Örneğin; 
+lnput{0, 0, 4, 0, 0, 6, 0, 0, 3, 0, 5, 0, 1, 0, 0, 0}
+
+(Black bars are the histogram. Gray is water.) 
+
+Output:26 
+
+
 17.22 Word Transformer: Given two words of equal length that are in a dictionary, write a method to
 transform one word into another word by changing only one letter at a time. The new word you get
 in each step must be in the dictionary.
@@ -1293,17 +1463,46 @@ EXAMPLE
 Input: DAMP, LIKE
 Output: DAMP-> LAMP-> LIMP-> LIME-> LIKE 
 
+17.22
+Kelime Dönüştürücü:  (Bu da güzel bir oyun.)
+Bir sözlükteki eşit uzunlukta iki kelime verildiğinde, bir kerede yalnızca bir harf değiştirerek bir sözcüğü başka bir sözcüğe dönüştürmek için bir yöntem yazın. Her adımda oluşturduğunuz yeni sözcük, sözlükte olmalıdır.
+
+Örneğin;
+Input: DAMP, LIKE
+
+Output: DAMP-> LAMP-> LIMP-> LIME-> LIKE 
+
+
+
 17.23 Max Square Matrix: Imagine you have a square matrix, where each cell (pixel) is either black or
 white. Design an algorithm to find the maximum subsquare such that all four borders are filled with
 black pixels
 
+
+
+17.23
+Maksimum Kare Matris: 
+Her bir hücrenin siyah veya beyaz olduğu kare bir matris hayal edin. Dört kenarlığın tamamı siyah piksellerle doldurulacak şekilde, maksimum alt kareyi bulmak için bir algoritma tasarlayın.
+
+
+
 17.24 Max Submatrix: Given an NxN matrix of positive and negative integers, write code to find the
 submatrix with the largest possible sum.
+
+17.24
+Maksimum Submatrix (Alt matrix): 
+Pozitif ve negatif tamsayıların NxN matrisi göz önüne alındığında, mümkün olan en büyük toplamı içeren alt matrisi bulmak için kod yazın.
+
 
 17 .25 Word Rectangle: Given a list of millions of words, design an algorithm to create the largest possible
 rectangle of letters such that every row forms a word (reading left to right) and every column forms
 a word (reading top to bottom). The words need not be chosen consecutively from the list, but all
 rows must be the same length and all columns must be the same height. 
+
+17.25
+Kelime Dikdörtgeni: 
+Milyonlarca kelime içeren bir liste verildiğinde, her satır bir kelime (soldan sağa okuma) ve her sütun bir kelime (yukarıdan aşağıya okuma) oluşturacak şekilde mümkün olan en büyük harf dikdörtgenini oluşturmak için bir algoritma tasarlayın. Kelimelerin listeden art arda seçilmesi gerekmez, ancak tüm satırlar aynı uzunlukta ve tüm sütunlar aynı yükseklikte olmalıdır.
+
 
 17.26 Sparse Similarity: The similarity of two documents (each with distinct words) is defined to be the
 size of the intersection divided by the size of the union. For example, if the documents consist of
@@ -1325,6 +1524,34 @@ Output:
 ID1, ID2 : SIMILARITY  
 13, 19 :  0.1
 13, 16 : 0.25
+19, 24  : 0.14285714285714285
+
+17.26
+
+Seyrek Benzerlik: 
+İki belgenin benzerliği (her biri ayrı kelimelerle ifade edilir), birliğin boyutuna bölünen kavşakların boyutu olarak tanımlanır. Örneğin, belgeler tamsayılardan oluşuyorsa, {1, 5, 3} ve {1, 7, 2, 3} benzerlikleri 0'dır, çünkü kesişme boyutu 2'dir ve birliğin boyutu 5'tir.
+Benzerliğin "seyrek:" olduğuna inanılan uzun bir belge listemiz var. (her biri ayrı değerlere sahip ve her biri ilişkili bir ID'ye sahip.) Yani, keyfi olarak seçilen iki belgenin 'O' (Ne olduğunu anlamadım "O" bunun.) benzerliğine sahip olma olasılığı çok yüksektir.  Belge ID çiftlerinin ve bunlarla ilişkili benzerliklerin listesini döndüren bir algoritma tasarlayın. Yalnızca 0'dan büyük benzerlikleri olan çiftleri yazdırın. Boş belgeler hiç yazdırılmamalıdır. Basit olması için, her belgenin farklı bir tam sayı arrayi olarak temsil edildiğini varsayabilirsiniz.
+
+
+Örneğin; 
+Input:
+
+13: {14, 15, 100, 9, 3}
+
+16: {32, 1, 9, 3, 5}
+
+19: {15, 29, 2, 6, 8, 7}
+
+24: {7, 10}
+
+Output:
+
+ID1, ID2 : SIMILARITY  
+
+13, 19 :  0.1
+
+13, 16 : 0.25
+
 19, 24  : 0.14285714285714285
 
 
@@ -1459,5 +1686,3 @@ SHOW WARNINGS;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-
