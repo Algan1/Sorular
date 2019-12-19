@@ -1172,6 +1172,7 @@ sonucu hesapla. (parantez yok
 Output: 23.5           
 
 
+
 17: Ek-Sorular: Zor  
 17 .1 Add Without Plus: Write a function that adds two numbers. You should not use+ or any arithmetic
 operators. 
@@ -1272,21 +1273,22 @@ Bir Sirk, birbirinin omuzlarında duran insanlardan oluşan bir kule tasarlıyor
 and 7. Note that 3, 5, and 7 do not have to be factors, but it should not have any other prime factors.
 For example, the first several multiples would be (in order) 1, 3, 5, 7, 9, 15, 21. 
 
-17.9
+17.9.  
 Kth Multiple: (Bilmem kaçıncı katsayı)
 Asal çarpanları 3, 5 ve 7 olan "kth" (bilmem kaçıncı) sayısını bulmak için bir algoritma tasarlayın. 
 3, 5 ve 7'den başka asal çarpanı olmadığını unutmayın.
-
+1x1x1, 3x1x1, 1x5x1, 1x1x7, 9x1x1, 3x5x1, 3x1x7, 1x5x7, 9x5x1
 Örneğin, ilk birkaç katsayı şöyle (sırayla) olacaktır 
 k      sayı
-1	1
-2       3    
-3	5
-4	7
-5	9
-6	15
-7	21
- 
+:   1
+  2.   :  3    
+  3    :  5
+  4    :  7
+  5.  :     9
+ 6  :   15
+ 7 :   	21
+ 8:  35
+ 9 :  45
 
 
 17 .10 Majority Element: A majority element is an element that makes up more than half of the items in
@@ -1325,7 +1327,7 @@ public class BiNode {
     public BiNode nodel, node2;
     public int data;
 }
-
+Not: Genel anlamda, bir veri yapısını başka bir veri yapısına çevirme, başka bir veri yapısı ile ifâde etme konusu üzerine çalışın.
 
 17.13 Re-Space: Oh, no! You have accidentally removed all spaces, punctuation, and capitalization in a
 lengthy document. A sentence like "I reset the c omputer. It still didn't boot!"
@@ -1338,8 +1340,9 @@ Output: jess looked just like tim her brother (7 unrecognized characters)
 
 
 17.13
-Re-Space: 
-Uzun bir belgede tüm boşlukları, noktalama işaretlerini ve büyük harfleri yanlışlıkla kaldırdınız. Örneğin; "Bilgisayara reset attım. Hala açılmadı!" Gibi bir cümle. "bilgisayararesetattimhalaaçılmadı" oldu. Noktalama işaretleri ve büyük harf kullanımı ile daha sonra ilgileneceksiniz; şu anda boşlukları yeniden yerleştirmeniz gerekiyor. Kelimelerin çoğu sözlükte var ama birkaçı değil. Bir sözlük (dizelerin listesi) ve belge (bir dize) göz önüne alındığında, belgeyi tanınmayan karakter sayısını en aza indirecek şekilde birleştirmek için bir algoritma tasarlayın.
+Re-Space (Boşlukları yeniden koy): 
+Uzun bir belgede tüm boşlukları, noktalama işaretlerini ve büyük harfleri yanlışlıkla kaldırdınız. Örneğin; "Bilgisayara reset attım. Hala açılmadı!" Gibi bir cümle. "bilgisayararesetattimhalaaçılmadı" oldu. Noktalama işaretleri ve büyük harf kullanımı ile daha sonra ilgileneceksiniz; şu anda boşlukları yeniden yerleştirmeniz gerekiyor. Kelimelerin çoğu sözlükte var ama birkaçı değil. Bir sözlük (String listesi) ve belge (Bir String, Örneğin; "Bilgisayara reset attım. Hala açılmadı!"
+ ) göz önüne alındığında, belgeyi tanınmayan karakter sayısını en aza indirecek şekilde birleştirmek için bir algoritma tasarlayın.
 
 Örneğin: 
 
@@ -1347,17 +1350,16 @@ Input : jesslookedjustliketimherbrother
 
 Output: jess looked just like tim her brother (7 unrecognized characters)
 
- (Bize bir sözlük gibi kelime arrayi veriliyor. Dolayısı ile, o ân bir sözcük yakaladığımızı o sözlüğe bakarak anlayacağız)
+ (Bize bir sözlük olarak kelime arrayi veriliyor. Dolayısı ile, o ân bir sözcük yakaladığımızı o sözlüğe bakarak anlayacağız)
 
 17 .14 Smallest K: Design an algorithm to find the smallest K numbers in an array
 
 17.14
 
 En Küçük K: 
-Bir arraydeki en küçük Kncı sayıyı bulmak için bir algoritma tasarlayın
-
-
-
+Bir arraydeki en küçük K’inci (bilmem kaçıncı) sayıyı bulmak için bir algoritma tasarlayın
+Örnek: {1, 5 , 6, 21, 3, 9, 4}
+ Bu listede 3. en küçük elemanı bulalım: k=3 ise, Sonuç: 4
 
 17.15 Longest Word: Given a list of words, write a program to find the longest word made of other words
 in the list.’ 
@@ -1375,10 +1377,11 @@ EXAMPLE
 Input: {30, 15, 60, 75, 45, 15, 15, 45}
 Output 180 minutes ({30, 60, 45, 45}). 
 
+(Not: Optimalliğin kriteri nedir?)
 
 17.16
 Masöz: 
-Popüler bir masöz, bir dizi arka arkaya randevu talebi alır ve hangilerinin kabul edeceğini tartışır. Randevular arasında 15 dakikalık bir ara vermesi gerekiyor ve bu nedenle ard arda olan talepleri kabul edemiyor.  Back-to-back randevu talebi dizisi verildiğinde, masözün çalışabileceği en uygun zamanları (en yüksek toplam dakika tutanları) bulun. Dakika sayısını döndür.
+Popüler bir masöz, bir dizi arka arkaya randevu talebi alır ve hangilerini kabul edeceğini tartışır. Randevular arasında 15 dakikalık bir ara vermesi gerekiyor ve bu nedenle art arda olan talepleri kabul edemiyor.  Back-to-back randevu talebi dizisi verildiğinde, masözün çalışabileceği en uygun zamanları (en yüksek toplam dakika tutanları) bulun. Dakika sayısını döndür.
 
 Örneğin;
 
@@ -1415,7 +1418,7 @@ Output:[7, 10] (the underlined portion above)
 17.18
 
 En Kısa Süper dizi: 
-Biri diğerinden kısa olan (diğer tüm öğeleriyle birlikte) iki dizi verilir. Kısa dizideki tüm öğeleri içeren daha uzun dizideki en kısa subarrayi bulun. Öğeler herhangi bir sırada görünebilir.
+Biri diğerinden kısa olan (diğer tüm öğeleriyle birlikte) iki dizi verilir. Kısa dizideki tüm öğeleri içeren "daha uzun dizideki” "en kısa subarrayi" bulun. Öğeler herhangi bir sırada görünebilir.
 
 Örneğin; 
 
@@ -1430,15 +1433,18 @@ Output:[7, 10] (the underlined portion above
 
 17.19 Missing Two: You are given an array with all the numbers from 1 to N appearing exactly once,
 except for one number that is missing. How can you find the missing number in O(N) time and
-0( 1) space? What if there were two numbers missing? 
+0(1) space? What if there were two numbers missing? 
 
 
 17.19
 
 Kayıp İki: 
-Eksik olan bir sayı dışında, 1'den N'ye kadar olan tüm sayıların bir kez göründüğü bir dizi verilir. Eksik sayıyı O(N) zamanı ve 0(1) boşluğunda nasıl bulabilirsiniz? Peki iki rakam eksikse nasıl yaparsınız?
+Eksik olan bir sayı dışında, 1'den N'ye kadar olan tüm sayıların bir kez göründüğü bir dizi verilir. Eksik sayıyı O(N) zamanı ve 0(1) karmaşıklığında
+ nasıl bulabilirsiniz? Peki iki rakam eksikse nasıl yaparsınız?
 
-
+ N=18, 
+ÖRNEK: {1, 4 , 5 , 6, 3, 16, 17, 18,  2, 8,  14, 15, 11, 7, 12, 13}
+ Bu arrayde 9 eksiktir. Eksik olan bu sayıyı sayıyı O(N) zamanı ve 0(1)  karmaşıklığında bulmamız isteniyor.
 
 17.20 Continuous Median: Numbers are randomly generated and passed to a method. Write a program
 to find and maintain the median value as new values are generated. 
@@ -1448,12 +1454,13 @@ to find and maintain the median value as new values are generated.
 Sürekli Medyan: 
 Sayılar rastgele oluşturulur ve bir yönteme iletilir. Yeni değerler üretilirken medyan değerini bulmak ve sürdürmek için bir program yazın.
 
+Not: Bir diziye sürekli olarak rakamlar eklendiğinde, ortalamayı dinamik olarak bulmamız isteniyor.
 
 
 17.21 Volume of Histogram: Imagine a histogram (bar graph). Design an algorithm to compute the
 volume of water it could hold if someone poured water across the top. You can assume that each
 histogram bar has width 1.
-EXAMPLE
+EXAMPLE:
 lnput{0, 0, 4, 0, 0, 6, 0, 0, 3, 0, 5, 0, 1, 0, 0, 0}
 (Black bars are the histogram. Gray is water.) 
 
@@ -1464,6 +1471,7 @@ Output:26
 Histogramın Hacmi: 
 Histogram (çubuk grafik) düşünün. Birisi üste su dökerse, tutabileceği suyun hacmini hesaplamak için bir algoritma tasarlayın. Her histogram çubuğunun 1 genişliğine sahip olduğunu varsayabilirsiniz.
 
+(Histogramın barlarının arasındaki boşluğun bir kap oluşturduğunu hayal etmek gerekir)
 
 Örneğin; 
 lnput{0, 0, 4, 0, 0, 6, 0, 0, 3, 0, 5, 0, 1, 0, 0, 0}
@@ -1495,13 +1503,13 @@ Output: DAMP-> LAMP-> LIMP-> LIME-> LIKE
 white. Design an algorithm to find the maximum subsquare such that all four borders are filled with
 black pixels
 
+3x3 matris mesela.
 
 
 17.23
 Maksimum Kare Matris: 
 Her bir hücrenin siyah veya beyaz olduğu kare bir matris hayal edin. Dört kenarlığın tamamı siyah piksellerle doldurulacak şekilde, maksimum alt kareyi bulmak için bir algoritma tasarlayın.
-
-
+https://www.geeksforgeeks.org/maximum-size-sub-matrix-with-all-1s-in-a-binary-matrix/
 
 17.24 Max Submatrix: Given an NxN matrix of positive and negative integers, write code to find the
 submatrix with the largest possible sum.
@@ -1509,17 +1517,18 @@ submatrix with the largest possible sum.
 17.24
 Maksimum Submatrix (Alt matrix): 
 Pozitif ve negatif tamsayıların NxN matrisi göz önüne alındığında, mümkün olan en büyük toplamı içeren alt matrisi bulmak için kod yazın.
-
+https://www.geeksforgeeks.org/maximum-sum-rectangle-in-a-2d-matrix-dp-27/
 
 17 .25 Word Rectangle: Given a list of millions of words, design an algorithm to create the largest possible
 rectangle of letters such that every row forms a word (reading left to right) and every column forms
 a word (reading top to bottom). The words need not be chosen consecutively from the list, but all
 rows must be the same length and all columns must be the same height. 
 
+
 17.25
 Kelime Dikdörtgeni: 
 Milyonlarca kelime içeren bir liste verildiğinde, her satır bir kelime (soldan sağa okuma) ve her sütun bir kelime (yukarıdan aşağıya okuma) oluşturacak şekilde mümkün olan en büyük harf dikdörtgenini oluşturmak için bir algoritma tasarlayın. Kelimelerin listeden art arda seçilmesi gerekmez, ancak tüm satırlar aynı uzunlukta ve tüm sütunlar aynı yükseklikte olmalıdır.
-
+(Bir sözlükteki kelimelerden çengel bulmaca yaratan algoritma)
 
 17.26 Sparse Similarity: The similarity of two documents (each with distinct words) is defined to be the
 size of the intersection divided by the size of the union. For example, if the documents consist of
@@ -1542,6 +1551,8 @@ ID1, ID2 : SIMILARITY
 13, 19 :  0.1
 13, 16 : 0.25
 19, 24  : 0.14285714285714285
+
+(İki kümenin kesişim kümesinin, birleşim kümesine oranını soruyor özetle)
 
 17.26
 
